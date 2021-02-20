@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/glyphicons/css/bootstrap.icon-large.min.css">
+ 
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+  <header>
+                
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " >
+            <a class="navbar-brand" href="#">EAT HERE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">เกี่ยวกับเรา <span class="sr-only">(current)</span></a>
+                </li>
+               
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ชื่อผู้ใช้งาน
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#modalStatusOrderForm">เช็คออเดอร์</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEditForm" >แก้ไขสมาชิก</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTopUpForm">เติมเงิน</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalWithdrawForm">ถอนเงิน</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">ออกจากระบบ</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">1000 B</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">0 CB</a>
+                      </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0" method="">
+                <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาออเดอร์อาหาร" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">เช็ครายการสั่งอาหาร</button>
+              </form>
+            </div>
+          </nav>
+
+
+        <modal>
+
+
+          <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center justify-content-center ">
+                <h4 class="modal-title w-100 h5 ">สมัครสมาชิก</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body mx-1 ">
+                <div class="md-form mb-1">
+                  <i class="  prefix dark-text"></i>
+                  <label data-error="wrong" data-success="right" for="orangeForm-name">ชื่อ</label>
+                  <input type="text" id="name" class="form-control validate " placeholder="ชื่อ">
+                  
+                </div>
+                <div class="md-form mb-1">
+                  <i class=" prefix dark-text"></i>
+                  <label data-error="wrong" data-success="right" for="orangeForm-email">อีเมลล์</label>
+                  <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                  
+                </div>
+        
+                <div class="md-form mb-1">
+                  <i class=" prefix dark-text"></i>
+                  <label data-error="wrong" data-success="right" for="orangeForm-">รหัสผ่าน</label>
+                  <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                  
+                </div>
+                
+                <div class="md-form mb-1">
+                  <i class=" prefix dark-text"></i>
+                  <label data-error="wrong" data-success="right" for="orangeForm-">เบอร์โทรศัพท์</label>
+                  <input type="text" id="telephone" class="form-control validate" placeholder="เบอร์โทรศัพท์10หลัก">
+                  
+                </div>
+        
+              </div>
+              <div class="modal-footer d-flex justify-content-center w-100">
+                <button class="btn btn-lg colorbtn text-white " type="submit"> ลงทะเบียน</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+
+
+        <!--Edit-->
+        <form action="">
+        <div class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center justify-content-center ">
+                <h4 class="modal-title w-100 h5 ">แก้ไขรายละเอียดสมาชิก</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body mx-1 ">
+                <div class="md-form mb-1">
+                  <i class="  prefix dark-text "></i>
+                  <label  data-error="wrong" data-success="right" for="orangeForm-name ">ชื่อ</label>
+                  <input type="text" id="orangeForm-name" class="form-control validate " placeholder="ชื่อ" >
+                  
+                </div>
+                <div class="md-form mb-1">
+                  <i class=" prefix dark-text"></i>
+                  <label data-error="wrong" data-success="right" for="orangeForm-email">อีเมลล์</label>
+                  <input type="email" id="orangeForm-email" class="form-control validate" placeholder="อีเมลล์" aria-disabled="true">
+                  
+                </div>
+        
+                  <div class="md-form mb-1">
+                  <i class=" prefix dark-text"></i>
+                  <label data-error="wrong" data-success="right" for="orangeForm-pass">เบอร์โทรศัพท์</label>
+                  <input type="text" id="orangeForm-telephone" class="form-control validate" placeholder="เบอร์โทรศัพท์10หลัก">
+                  
+                </div>
+
+                <div class="md-form mb-1">
+                        <i class=" prefix dark-text"></i>
+                        <label data-error="wrong" data-success="right" for="orangeForm-pass">ที่อยู่</label>
+                        <input type="text" id="no_add" class="form-control validate" placeholder="บ้าน/หมู่บ้าน เลขที่ ถนน ซอย ">
+
+                        
+                      </div>
+
+                      
+
+                              <div class="md-form mb-1">
+                                    <i class=" prefix dark-text"></i>
+                                    <label data-error="wrong" data-success="right" for="orangeForm-pass">ตำบล</label>
+                                    <input type="text" id="city" class="form-control validate" placeholder="ตำบล">
+
+                                       
+                                    
+                                  </div>
+
+                                  <div class="md-form mb-1">
+                                        <i class=" prefix dark-text"></i>
+                                        <label data-error="wrong" data-success="right" for="orangeForm-pass">อำเภอ</label>
+                                        <input type="text" id="district" class="form-control validate" placeholder="อำเภอ">
+
+                                      </div>
+
+                                      <div class="md-form mb-1">
+                                            <i class=" prefix dark-text"></i>
+                                            <label data-error="wrong" data-success="right" for="orangeForm-pass">จังหวัด</label>
+                                            
+                                            <select class="form-control validate" placeholder="จังหวัด" id="province"> 
+                                                    <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+<option value="กระบี่">กระบี่ </option>
+<option value="กาญจนบุรี">กาญจนบุรี </option>
+<option value="กาฬสินธุ์">กาฬสินธุ์ </option>
+<option value="กำแพงเพชร">กำแพงเพชร </option>
+<option value="ขอนแก่น">ขอนแก่น</option>
+<option value="จันทบุรี">จันทบุรี</option>
+<option value="ฉะเชิงเทรา">ฉะเชิงเทรา </option>
+<option value="ชัยนาท">ชัยนาท </option>
+<option value="ชัยภูมิ">ชัยภูมิ </option>
+<option value="ชุมพร">ชุมพร </option>
+<option value="ชลบุรี">ชลบุรี </option>
+<option value="เชียงใหม่">เชียงใหม่ </option>
+<option value="เชียงราย">เชียงราย </option>
+<option value="ตรัง">ตรัง </option>
+<option value="ตราด">ตราด </option>
+<option value="ตาก">ตาก </option>
+<option value="นครนายก">นครนายก </option>
+<option value="นครปฐม">นครปฐม </option>
+<option value="นครพนม">นครพนม </option>
+<option value="นครราชสีมา">นครราชสีมา </option>
+<option value="นครศรีธรรมราช">นครศรีธรรมราช </option>
+<option value="นครสวรรค์">นครสวรรค์ </option>
+<option value="นราธิวาส">นราธิวาส </option>
+<option value="น่าน">น่าน </option>
+<option value="นนทบุรี">นนทบุรี </option>
+<option value="บึงกาฬ">บึงกาฬ</option>
+<option value="บุรีรัมย์">บุรีรัมย์</option>
+<option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์ </option>
+<option value="ปทุมธานี">ปทุมธานี </option>
+<option value="ปราจีนบุรี">ปราจีนบุรี </option>
+<option value="ปัตตานี">ปัตตานี </option>
+<option value="พะเยา">พะเยา </option>
+<option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา </option>
+<option value="พังงา">พังงา </option>
+<option value="พิจิตร">พิจิตร </option>
+<option value="พิษณุโลก">พิษณุโลก </option>
+<option value="เพชรบุรี">เพชรบุรี </option>
+<option value="เพชรบูรณ์">เพชรบูรณ์ </option>
+<option value="แพร่">แพร่ </option>
+<option value="พัทลุง">พัทลุง </option>
+<option value="ภูเก็ต">ภูเก็ต </option>
+<option value="มหาสารคาม">มหาสารคาม </option>
+<option value="มุกดาหาร">มุกดาหาร </option>
+<option value="แม่ฮ่องสอน">แม่ฮ่องสอน </option>
+<option value="ยโสธร">ยโสธร </option>
+<option value="ยะลา">ยะลา </option>
+<option value="ร้อยเอ็ด">ร้อยเอ็ด </option>
+<option value="ระนอง">ระนอง </option>
+<option value="ระยอง">ระยอง </option>
+<option value="ราชบุรี">ราชบุรี</option>
+<option value="ลพบุรี">ลพบุรี </option>
+<option value="ลำปาง">ลำปาง </option>
+<option value="ลำพูน">ลำพูน </option>
+<option value="เลย">เลย </option>
+<option value="ศรีสะเกษ">ศรีสะเกษ</option>
+<option value="สกลนคร">สกลนคร</option>
+<option value="สงขลา">สงขลา </option>
+<option value="สมุทรสาคร">สมุทรสาคร </option>
+<option value="สมุทรปราการ">สมุทรปราการ </option>
+<option value="สมุทรสงคราม">สมุทรสงคราม </option>
+<option value="สระแก้ว">สระแก้ว </option>
+<option value="สระบุรี">สระบุรี </option>
+<option value="สิงห์บุรี">สิงห์บุรี </option>
+<option value="สุโขทัย">สุโขทัย </option>
+<option value="สุพรรณบุรี">สุพรรณบุรี </option>
+<option value="สุราษฎร์ธานี">สุราษฎร์ธานี </option>
+<option value="สุรินทร์">สุรินทร์ </option>
+<option value="สตูล">สตูล </option>
+<option value="หนองคาย">หนองคาย </option>
+<option value="หนองบัวลำภู">หนองบัวลำภู </option>
+<option value="อำนาจเจริญ">อำนาจเจริญ </option>
+<option value="อุดรธานี">อุดรธานี </option>
+<option value="อุตรดิตถ์">อุตรดิตถ์ </option>
+<option value="อุทัยธานี">อุทัยธานี </option>
+<option value="อุบลราชธานี">อุบลราชธานี</option>
+<option value="อ่างทอง">อ่างทอง </option>
+                                                  </select>
+                                          </div>
+
+                                          <div class="md-form mb-1 my-2">
+                                               
+                                                <label data-error="wrong" data-success="right" for="orangeForm-pass">เปลี่ยนรหัสผ่าน</label>
+                                                
+                                                
+                                              </div>
+                                          <div class="md-form mb-1 my-2">
+                                                <i class=" prefix dark-text"></i>
+                                                <label data-error="wrong" data-success="right" for="orangeForm-pass">รหัสผ่านเดิม</label>
+                                                <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่านเดิม">
+                                                
+                                              </div>
+                                              <div class="md-form mb-1 my-2">
+                                                    <i class=" prefix dark-text"></i>
+                                                    <label data-error="wrong" data-success="right" for="orangeForm-pass">รหัสผ่านใหม่</label>
+                                                    <input type="password" id="new-password" class="form-control validate" placeholder="รหัสผ่านใหม่">
+                                                    
+                                                  </div>
+
+                    
+                
+        
+              </div>
+              <div class="modal-footer d-flex justify-content-center w-100 ">
+                <button class="btn btn-lg colorbtn text-white " type="submit"> ยืนยัน</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+</form>
+
+
+        <!-- Topup -->
+
+        <form >
+        <div class="modal fade" id="modalTopUpForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center justify-content-center ">
+              <h4 class="modal-title w-100 h5 ">เติมเงิน</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-1 ">
+              <div class="md-form mb-1">
+                <h2>ยอดเงิน</h2>
+                
+                <span >
+                    <label class="display-3 justify-content-center" id="youramount"> 1000 </label>
+                    <label class="display-3 justify-content-center" >บาท  </label>
+                </span>
+                <br>
+                    <label class="display-4 justify-content-center align-baseline" id="yourcashback"> 10 </label>
+                    <label class="display-4 justify-content-center align-baseline" > CB </label>
+                
+                <div class="modal-body mx-1 ">
+                        <div class="md-form mb-1">
+                          <i class="  prefix dark-text align-content-center">เลขที่บัญชี 000000000 Promptpay </i>
+                          <i class="  prefix dark-text">เลขที่บัญชี 00.10110-1-1111 ธนคารกรุงไทย สาขา มหาวิทยาลัยขอนแก่น</i>
+
+                </div>
+            
+                <div class="md-form mb-3">
+                        <i class=" prefix dark-text"></i>
+                        <label data-error="wrong" data-success="right" for="orangeForm-pass">จำนวนการเติมเงิน</label>
+                        <input type="text" id="Street" class="form-control validate" placeholder="100บาทขึนไป">
+                               
+      
+            </div>
+
+
+            <div class="md-form mb-3">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="orangeForm-pass">วันที่โอน</label>
+                    <input type="text" id="datepicker" class="form-control validate"></<input>
+                            
+  
+        </div>
+
+        
+        <div class="md-form mb-3">
+                <i class=" prefix dark-text"></i>
+                <label data-error="wrong" data-success="right" for="orangeForm-pass">ธนาคารที่โอน</label>
+                <select class="form-control validate"  id="namebank"  >
+                        <option>ธนคารกรุงไทย</option>
+                        <option>ธนคารเกรียตินาคิน</option>
+                        <option>ธนคารกรุงศรี</option>
+                        <option>ธนคารกสิกร</option>
+                        <option>ธนคารไทยพาณิชย์</option>
+                                            
+                        <option>ธนคารออมสิน</option>
+                      </select>
+                        
+
+    </div>
+           
+            
+            <div class="md-form mb-3">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="orangeForm-pass">ภาพหลักฐานการโอน</label>
+                    <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                    
+                </div>
+
+                            
+                            
+
+        </div>
+
+        <div class="md-form mb-1 ">
+
+                <label for="orangeForm-pass" class="modal-footer ">สถานะการโอน : ยังไม่โอนหลักฐานการโอนเงิน</label>
+        
+    </div>
+
+        
+        
+            <div class="modal-footer d-flex justify-content-center w-100">
+                   
+              <button class="btn btn-lg colorbtn text-white " type="submit">เติมเงิน</button>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+        <!-- Withdraw-->
+                    <form>
+        <div class="modal fade" id="modalWithdrawForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center justify-content-center ">
+              <h3 class="modal-title w-100 h5 ">ถอนเงิน</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-1 align-items-center ">
+              <div class="md-form mb-1">
+                    <h4 class="modal-title w-100 h5 ">สามารถถอนได้</h4>
+                
+                
+                    
+                    <label class="display-3 justify-content-center" id="yourcashback"> &NonBreakingSpace; 10 </label>
+                    <label class="display-3 justify-content-center" id="yourcashback">CB </label>
+                    <i class="fa fa-underline" aria-hidden="true">1CB=1บาท</i>
+                    
+               
+                <div class="modal-body mx-1 ">
+                        <div class="md-form mb-1">
+                          <p class="text-dark">สามารถถอนได้ขั้นต่ำ100บาทสูงสุด1000บาทต่อครั้ง ทางระบบจ่ายทาง Promptpay ระยะดำเนินการภายใน5วันทำการ</p>
+
+                </div>
+            
+                <div class="md-form mb-3">
+                        <i class=" prefix dark-text"></i>
+                        <label data-error="wrong" data-success="right" for="promptpaynum">เบอร์โทรศัพท์10หลัก หรือ หมายเลขบัตรประชาชน</label>
+                        <input type="text" id="promptpaynum" class="form-control validate" placeholder="เบอร์โทรศัพท์ หรือ หมายเลขบัตรประชาชน">
+                               
+      
+            </div>
+
+
+            <div class="md-form mb-3">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="orangeForm-pass">จำนวนเงินต้องการถอน</label>
+                    <input type="number" id="amountwithdraw" value="100" min="100" max="1000" step="100" class="form-control validate " required/></input>
+
+                    
+                    </script>
+  
+        </div>
+
+        </div>
+
+        <div class="md-form mb-1 ">
+
+                <label for="orangeForm-pass" class="modal-footer ">สถานะการโอน : กำลังรอการพิจารณา</label>
+        
+    </div>
+
+        
+        
+            <div class="modal-footer d-flex justify-content-center w-100">
+                   
+              <button class="btn btn-lg colorbtn text-white " type="submit">ถอนเงิน</button>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+        </div>
+
+
+    </form>
+
+    
+
+    <form>
+      <div class="modal fade" id="modalStatusOrderForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center justify-content-center ">
+            <h3 class="modal-title w-100 h5 ">รายการที่สั่งไว้</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <ul class="list-group">
+                  
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
+
+                    <span class="badge badge-primary badge-pill badge mr-auto ">3 Sep 2019</span>
+                    <span class=" mr-auto " style="font-size: 1em;">ร้านเค้กบิ้กบึ้ม</span>
+                    <span class="ml-auto  lead" style="color:black; text-shadow: black;">สั่งอาหารเสร็จสิ้น</span>
+                    
+                </li>
+                
+                  
+                  
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
+
+                    <span class="badge badge-primary badge-pill badge mr-auto ">3 Sep 2019</span>
+                    <span class=" mr-auto " style="font-size: 1em;">ร้านเค้กบิ้กบึ้ม</span>
+                    <span class="ml-auto  lead" style="color:orange; text-shadow: black;">กำลังทำอาหาร</span>
+                    
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
+
+                    <span class="badge badge-primary badge-pill badge mr-auto ">3 Sep 2019</span>
+                    <span class=" mr-auto " style="font-size: 1em;">ร้านเค้กบิ้กบึ้ม</span>
+                    <span class="ml-auto  lead" style="color:lightskyblue; text-shadow: black;">รอไดรฟ์เวอร์รับอาหาร</span>
+                    
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
+
+                    <span class="badge badge-primary badge-pill badge mr-auto ">3 Sep 2019</span>
+                    <span class=" mr-auto " style="font-size: 1em;">ร้านเค้กบิ้กบึ้ม</span>
+                    <span class="ml-auto  lead" style="color:olivedrab; text-shadow: black;">รับอาหารเสร็จสิ้น</span>
+                    
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
+
+                    <span class="badge badge-primary badge-pill badge mr-auto ">3 Sep 2019</span>
+                    <span class=" mr-auto " style="font-size: 1em;">ร้านเค้กบิ้กบึ้ม</span>
+                    <span class="ml-auto  lead" style="color:darkred; text-shadow: black;">ปฏิเสธรับออเดอร์</span>
+                    
+                </li>
+              </ul>
+              
+          
+              
+
+      </div>
+
+      </div>
+
+      
+
+      
+      
+          
+        </div>
+      
+
+
+  </form>
+
+</modal>
+        
+        </header>
+
+            
+            <div class="jumbotron-fluid    mt-3 mb-3 section1 ">
+              <div class="container ">
+        <!--   
+      <img src="/New folder/foodiesfeed.png" class="img-fluid" alt="Responsive image" height="35%" width="100%"/>  -->   
+       <div class="row justify-content-center ">
+              <h1 class="display-1 text-dark">EAT HERE</h1>
+              
+       </div>
+              
+
+              
+     
+       
+      </div>
+  </div>
+      
+        <div class="jumbotron-fluid    mb-3 section2  ">
+          
+                <div class="container-fluid  ">
+          <!--   
+        <img src="/New folder/foodiesfeed.png" class="img-fluid" alt="Responsive image" height="35%" width="100%"/>  -->   
+                <div class="row">
+                  <div class="col col-md-4 col-sm-8 ">
+                      
+                  
+                      <h1 class="display-4 text-white ">EAT HERE คือ</h1>
+                  </div>
+                </div>
+                
+                <div class="row ">
+                  <div class="col ">
+                      <div class="card col-sm-4 col-md-6 col-xl-4 mb-3 mt-3 shadow-sm " >
+                          <div class="">
+                          <div class=" card-body ">
+                            
+                            <p class="card-text">Eat here เป็นเว็บไซต์สั่งอาหารแบบอัตโนมัติโดยเป็นตัวลางระหว่างผู้ประกอบการที่เป็นนักศึกษามหาวิทยาลัยขอนแก่น</p>
+                            <p class="card-text">โดยชำระเงินเป็นแบบเติมเงินเข้าในระบบ (Prepaid) การสั่งอาหารจะสั่งเป็นรอบทุการตัดยอด เหมาะสมสำหรับอาหารที่ต้องทำแบบวันต่อวัน เช่น เค้ก ขนมไทย อาหารเพื่อสุขภาพ เป็นต้น </p>
+                            <p class="card-text">สามารถสั่งอาหารได้ที่นี่ที่ Eat Here อยากเป็นส่วนหนึ่งกับเรา</p>
+      
+                            <a href="#" class=" colorbtn btn btn-primary "> ร่วมเป็นพาร์ทเนอร์</a>
+                          </div> 
+                     </div>
+                
+              </div>
+                    
+                  </div>
+                  
+
+                  
+                </div>
+                
+      </div>
+    
+      <div class="container-fluid ml-2 ">
+        
+        <h2 class="m-lg-3  " >ร้านอาหารเด็ด ต้องลอง</h2>
+       <div class="row m-lg-3">
+          <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+              <div class="card" style="width: 100%; ">
+                  <img class="card-img-top" src="/Picture/หมูทอดเบรกแตก5.jpg" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                    <h4 class="card-title">ร้านเค้กบิ้กบึ้ม</h4>
+                    <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว, เค้ก </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>จันทร์-ศุกร์</span></p>
+                   <p class="card-text">เปิดรับออเดอร์ : <span>10.30</span> ปิดรับออเดอร์  : <span>15.45</span></p>
+                    <p>คะแนนร้าน :  <span>3</span> / <span> 5 </span></p>
+                    
+                    <a href="restaurant.html" class=" ml-auto colorbtn btn btn-primary "> สั่งอาหาร</a>
+                  </div> 
+             </div>
+            </div>
+
+            <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                <div class="card" style="width: 100%; ">
+                    <img class="card-img-top" src="/Picture/Clean-food.jpg" alt="Card image" style="width:100% ">
+                    <div class="card-body">
+                      <h4 class="card-title">Cleanly Clear</h4>
+                      <p class="card-text">ปรเภทอาหาร : <span > เพื่อสุขภาพ </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>จันทร์ พุธ ศุกร์</span></p>
+                     <p class="card-text">เปิดรับออเดอร์ : <span>10.30</span> ปิดรับออเดอร์  : <span>13.30</span></p>
+                      <p>คะแนนร้าน :  <span>4</span> / <span> 5 </span></p>
+                      
+                      <a href="#" class=" ml-auto colorbtn btn btn-primary disabled "> สั่งอาหาร</a>
+                    </div> 
+               </div>
+              </div>
+
+              <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                  <div class="card" style="width: 100%; ">
+                      <img class="card-img-top" src="/Picture/168_recipe_28s.jpg" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h4 class="card-title">น้องป้อมและตู่รับทำข้าวกล่อง</h4>
+                        <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว (สั่งขั้นต่ำ 50)  </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>จันทร์-ศุกร์ </span></p>
+                       <p class="card-text">เปิดรับออเดอร์ : <span>10.00</span> ปิดรับออเดอร์  : <span>13.45</span></p>
+                        <p>คะแนนร้าน :  <span>1</span> / <span> 5 </span></p>
+                        
+                        <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                      </div> 
+                 </div>
+                </div>
+
+                <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                    <div class="card" style="width: 100%; ">
+                        <img class="card-img-top" src="/Picture/microwave chocolate cake new.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <h4 class="card-title">เค้กหนูใหญ่นะ</h4>
+                          <p class="card-text">ปรเภทอาหาร : <span > อาหารหวาน, เค้ก </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>อังคาร พฤหัส เสาร์</span></p>
+                         <p class="card-text">เปิดรับออเดอร์ : <span>14.00</span> ปิดรับออเดอร์  : <span>19.00</span></p>
+                          <p>คะแนนร้าน :  <span>4</span> / <span> 5 </span></p>
+                          
+                          <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                        </div> 
+                   </div>
+                  </div>
+
+                  <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                      <div class="card" style="width: 100%; ">
+                          <img class="card-img-top" src="/Picture/best-food-delivery-services-to-partner-with.jpg" alt="Card image" style="width:100%">
+                          <div class="card-body">
+                            <h4 class="card-title">พิซซ่า BY เสี่ยโอ</h4>
+                            <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว, </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>พุธ-ศุกร์</span></p>
+                           <p class="card-text">เปิดรับออเดอร์ : <span>06.00</span> ปิดรับออเดอร์  : <span>14.00</span></p>
+                            <p>คะแนนร้าน :  <span>1.12</span> / <span> 5 </span></p>
+                            
+                            <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                          </div> 
+                     </div>
+                    </div>
+
+                    <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                        <div class="card" style="width: 100%; ">
+                            <img class="card-img-top" src="/Picture/872700-img.r7ta17.1552j.jpg" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <h4 class="card-title">ข้าวปุ้นหนมจีนแม่ปารีณา</h4>
+                              <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว (สั่งขั้นต่ำ 50) </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>พฤหัส-อาทิตย์ </span></p>
+                             <p class="card-text">เปิดรับออเดอร์ : <span>14.00</span> ปิดรับออเดอร์  : <span>23.00</span></p>
+                              <p>คะแนนร้าน :  <span>4.20</span> / <span> 5 </span></p>
+                              
+                              <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                            </div> 
+                       </div>
+                      </div>
+
+            
+            
+    
+
+
+             
+         
+           
+       </div>
+      
+      
+      </div>
+           
+
+            
+            
+            
+            
+    
+            <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+<!--Date pickup-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+
+    
+
+</body>
+</html>

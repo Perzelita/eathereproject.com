@@ -1,0 +1,258 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" >
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pb-2 " >
+                <a class="navbar-brand " href="#">EAT HERE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">เกี่ยวกับเรา <span class="sr-only">(current)</span></a>
+                    </li>
+
+                        <?php if (isset($_SESSION['telephone'])) {?>
+
+
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ชื่อผู้ใช้งาน
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#modalStatusOrderForm">เช็คออเดอร์</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEditForm" >แก้ไขสมาชิก</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTopUpForm">เติมเงิน</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalWithdrawForm">ถอนเงิน</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">ออกจากระบบ</a>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">1000 B</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">0 CB</a>
+                                  </li>
+                          
+                        <?php}else  {?>
+                          
+                    
+                        <li class="nav-item active">
+                            <a class="nav-link" href="" data-toggle="modal" data-target="#modalRegisterForm">สมัครสมาชิก<span class="sr-only">(current)</span></a>
+                          </li>
+                    
+                          <li class="nav-item active">
+                            <a class="nav-link" href="" data-toggle="modal" data-target="#modalSigninForm">เข้าสู่ระบบ<span class="sr-only">(current)</span></a>
+                          </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">0 บาท</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          ชื่อผู้ใช้งาน
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#modalStatusOrderForm">เช็คออเดอร์</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEditForm" >แก้ไขสมาชิก</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTopUpForm">เติมเงิน</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalWithdrawForm">ถอนเงิน</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">ออกจากระบบ</a>
+                        </div>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">1000 B</a>
+                      </li>
+                      <li class="nav-item">
+                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">0 CB</a>
+                            </li>
+                        
+                            <?php } ?>
+
+
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาออเดอร์อาหาร" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">เช็ครายการสั่งอาหาร</button>
+                  </form>
+                </div>
+              </nav>
+
+
+              <modal>
+              <!-- sign up-->
+
+              <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">สมัครสมาชิก</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+                    <div class="md-form mb-1">
+                      <i class="  prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="name">ชื่อ</label>
+                      <input type="text" id="username" class="form-control validate " placeholder="ชื่อ">
+                      
+                    </div>
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                      <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                      
+                    </div>
+                    
+                    <div class="md-form mb-1 my-2">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="telephone">เบอร์โทรศัพท์</label>
+                      <input type="text" id="telephone" class="form-control validate" placeholder="เบอร์โทรศัพท์10หลัก">
+                      
+                    </div>
+                    
+
+                    <div class="md-form mb-1 mt-2  form-check">
+                  
+                      
+                      <input class="form-check-input" type="checkbox" id="accept">
+                      <label class="form-check-label" for="accept">
+                        ยอมรับเงื่อนไขของทางบริษัท
+                      </label>
+                    
+                  
+                </div>
+                  </div>
+
+
+                  
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="register" type="submit"> ลงทะเบียน</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- sign up-->
+
+            <div class="modal fade" id="modalSigninForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">เข้าสู่ระบบ</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+                    
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                      <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                      
+                    </div>
+                                   
+                    
+
+                    <div class="md-form mb-1 mt-2  ">
+                  
+                      
+                     
+                      <a href="" class="mb-2" style="color: inherit;" data-toggle="modal" data-target="#modalforgotForm">กรณีลืมลืมรหัสผ่าน</a> 
+                    </div>    
+                     
+                  
+                
+                  </div>
+
+
+                  
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="signin" type="submit"> เข้าสู่ระบบ</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!--forgot password-->
+            <div class="modal fade" id="modalforgotForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">ลืมรหัสผ่าน</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="">ถ้าลืมรหัสผ่านโปรดกรอกอีเมลล์เพื่อรับรหัสผ่าน</label>
+                      
+                      
+                    </div>
+                    
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="submitforgot" type="submit"> ส่งไปยังอีเมลล์</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+</modal>
+            </header>
+
+
+            
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

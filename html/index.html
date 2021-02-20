@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/glyphicons/css/bootstrap.icon-large.min.css">
+ 
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pb-2 " >
+                <a class="navbar-brand " href="#">EAT HERE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">เกี่ยวกับเรา <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                            <a class="nav-link" href="" data-toggle="modal" data-target="#modalRegisterForm">สมัครสมาชิก<span class="sr-only">(current)</span></a>
+                          </li>
+                    
+                          <li class="nav-item active">
+                            <a class="nav-link" href="" data-toggle="modal" data-target="#modalSigninForm">เข้าสู่ระบบ<span class="sr-only">(current)</span></a>
+                          </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">0 บาท</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาออเดอร์อาหาร" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" > <a href="/order-status.html">เช็ครายการสั่งอาหาร</button></a>
+                  </form>
+                </div>
+              </nav>
+
+
+              <modal>
+              <!-- sign up-->
+
+              <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">สมัครสมาชิก</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+                    <div class="md-form mb-1">
+                      <i class="  prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="name">ชื่อ</label>
+                      <input type="text" id="name" class="form-control validate " placeholder="ชื่อ">
+                      
+                    </div>
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                      <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                      
+                    </div>
+                    
+                    <div class="md-form mb-1 my-2">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="telephone">เบอร์โทรศัพท์</label>
+                      <input type="text" id="telephone" class="form-control validate" placeholder="เบอร์โทรศัพท์10หลัก">
+                      
+                    </div>
+                    
+
+                    <div class="md-form mb-1 mt-2  form-check">
+                  
+                      
+                      <input class="form-check-input" type="checkbox" id="accept">
+                      <label class="form-check-label" for="accept">
+                        ยอมรับเงื่อนไขของทางบริษัท
+                      </label>
+                    
+                  
+                </div>
+                  </div>
+
+
+                  
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="register" type="submit"> ลงทะเบียน</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- sign up-->
+
+            <div class="modal fade" id="modalSigninForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">เข้าสู่ระบบ</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+                    
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                      <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                      
+                    </div>
+                                   
+                    
+
+                    <div class="md-form mb-1 mt-2  ">
+                  
+                      
+                     
+                      <a href="" class="mb-2" style="color: inherit;" data-toggle="modal" data-target="#modalforgotForm">กรณีลืมลืมรหัสผ่าน</a> 
+                    </div>    
+                     
+                  
+                
+                  </div>
+
+
+                  
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="signin" type="submit"> เข้าสู่ระบบ</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!--forgot password-->
+            <div class="modal fade" id="modalforgotForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">ลืมรหัสผ่าน</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="">ถ้าลืมรหัสผ่านโปรดกรอกอีเมลล์เพื่อรับรหัสผ่าน</label>
+                      
+                      
+                    </div>
+                    
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="submitforgot" type="submit"> ส่งไปยังอีเมลล์</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+</modal>
+            </header>
+
+            
+            <div class="jumbotron-fluid    mt-3 mb-3 section1 ">
+              <div class="container ">
+        <!--   
+      <img src="/New folder/foodiesfeed.png" class="img-fluid" alt="Responsive image" height="35%" width="100%"/>  -->   
+       <div class="row justify-content-center ">
+              <h1 class="display-1 text-dark">EAT HERE</h1>
+              
+       </div>
+              
+
+              
+     
+       
+      </div>
+  </div>
+      
+        <div class="jumbotron-fluid    mb-3 section2  ">
+          
+                <div class="container-fluid  ">
+          <!--   
+        <img src="/New folder/foodiesfeed.png" class="img-fluid" alt="Responsive image" height="35%" width="100%"/>  -->   
+                <div class="row">
+                  <div class="col col-md-4 col-sm-8 ">
+                      
+                  
+                      <h1 class="display-4 text-white ">EAT HERE คือ</h1>
+                  </div>
+                </div>
+                
+                <div class="row ">
+                  <div class="col ">
+                      <div class="card col-sm-4 col-md-6 col-xl-4 mb-3 mt-3 shadow-sm " >
+                          <div class="">
+                          <div class=" card-body ">
+                            
+                            <p class="card-text">Eat here เป็นเว็บไซต์สั่งอาหารแบบอัตโนมัติโดยเป็นตัวลางระหว่างผู้ประกอบการที่เป็นนักศึกษามหาวิทยาลัยขอนแก่น</p>
+                            <p class="card-text">โดยชำระเงินเป็นแบบเติมเงินเข้าในระบบ (Prepaid) การสั่งอาหารจะสั่งเป็นรอบทุการตัดยอด เหมาะสมสำหรับอาหารที่ต้องทำแบบวันต่อวัน เช่น เค้ก ขนมไทย อาหารเพื่อสุขภาพ เป็นต้น </p>
+                            <p class="card-text">สามารถสั่งอาหารได้ที่นี่ที่ Eat Here อยากเป็นส่วนหนึ่งกับเรา</p>
+      
+                            <a href="/register-kyc.html" class=" colorbtn btn btn-primary "> ร่วมเป็นพาร์ทเนอร์</a>
+                          </div> 
+                     </div>
+                
+              </div>
+                    
+                  </div>
+                  
+
+                  
+                </div>
+                
+      </div>
+    
+    <div class="container-fluid ml-2 ">
+        
+        <h2 class="m-lg-3  " >ร้านอาหารเด็ด ต้องลอง</h2>
+       <div class="row m-lg-3">
+          <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+              <div class="card" style="width: 100%; ">
+                  <img class="card-img-top" src="/Picture/หมูทอดเบรกแตก5.jpg" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                    <h4 class="card-title">ร้านเค้กบิ้กบึ้ม</h4>
+                    <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว, เค้ก </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>จันทร์-ศุกร์</span></p>
+                   <p class="card-text">เปิดรับออเดอร์ : <span>10.30</span> ปิดรับออเดอร์  : <span>15.45</span></p>
+                    <p>คะแนนร้าน :  <span>3</span> / <span> 5 </span></p>
+                    
+                    <a href="restaurant.html" class=" ml-auto colorbtn btn btn-primary "> สั่งอาหาร</a>
+                  </div> 
+             </div>
+            </div>
+
+            <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                <div class="card" style="width: 100%; ">
+                    <img class="card-img-top" src="/Picture/Clean-food.jpg" alt="Card image" style="width:100% ">
+                    <div class="card-body">
+                      <h4 class="card-title">Cleanly Clear</h4>
+                      <p class="card-text">ปรเภทอาหาร : <span > เพื่อสุขภาพ </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>จันทร์ พุธ ศุกร์</span></p>
+                     <p class="card-text">เปิดรับออเดอร์ : <span>10.30</span> ปิดรับออเดอร์  : <span>13.30</span></p>
+                      <p>คะแนนร้าน :  <span>4</span> / <span> 5 </span></p>
+                      
+                      <a href="#" class=" ml-auto colorbtn btn btn-primary disabled "> สั่งอาหาร</a>
+                    </div> 
+               </div>
+              </div>
+
+              <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                  <div class="card" style="width: 100%; ">
+                      <img class="card-img-top" src="/Picture/168_recipe_28s.jpg" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h4 class="card-title">น้องป้อมและตู่รับทำข้าวกล่อง</h4>
+                        <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว (สั่งขั้นต่ำ 50)  </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>จันทร์-ศุกร์ </span></p>
+                       <p class="card-text">เปิดรับออเดอร์ : <span>10.00</span> ปิดรับออเดอร์  : <span>13.45</span></p>
+                        <p>คะแนนร้าน :  <span>1</span> / <span> 5 </span></p>
+                        
+                        <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                      </div> 
+                 </div>
+                </div>
+
+                <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                    <div class="card" style="width: 100%; ">
+                        <img class="card-img-top" src="/Picture/microwave chocolate cake new.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                          <h4 class="card-title">เค้กหนูใหญ่นะ</h4>
+                          <p class="card-text">ปรเภทอาหาร : <span > อาหารหวาน, เค้ก </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>อังคาร พฤหัส เสาร์</span></p>
+                         <p class="card-text">เปิดรับออเดอร์ : <span>14.00</span> ปิดรับออเดอร์  : <span>19.00</span></p>
+                          <p>คะแนนร้าน :  <span>4</span> / <span> 5 </span></p>
+                          
+                          <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                        </div> 
+                   </div>
+                  </div>
+
+                  <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                      <div class="card" style="width: 100%; ">
+                          <img class="card-img-top" src="/Picture/best-food-delivery-services-to-partner-with.jpg" alt="Card image" style="width:100%">
+                          <div class="card-body">
+                            <h4 class="card-title">พิซซ่า BY เสี่ยโอ</h4>
+                            <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว, </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>พุธ-ศุกร์</span></p>
+                           <p class="card-text">เปิดรับออเดอร์ : <span>06.00</span> ปิดรับออเดอร์  : <span>14.00</span></p>
+                            <p>คะแนนร้าน :  <span>1.12</span> / <span> 5 </span></p>
+                            
+                            <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                          </div> 
+                     </div>
+                    </div>
+
+                    <div class="  col-md-4 col-sm-4  flex-md-row mb-3">
+          
+                        <div class="card" style="width: 100%; ">
+                            <img class="card-img-top" src="/Picture/872700-img.r7ta17.1552j.jpg" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                              <h4 class="card-title">ข้าวปุ้นหนมจีนแม่ปารีณา</h4>
+                              <p class="card-text">ปรเภทอาหาร : <span > อาหารคาว (สั่งขั้นต่ำ 50) </span><span>&NonBreakingSpace;</span> เปิดร้าน :  <span>พฤหัส-อาทิตย์ </span></p>
+                             <p class="card-text">เปิดรับออเดอร์ : <span>14.00</span> ปิดรับออเดอร์  : <span>23.00</span></p>
+                              <p>คะแนนร้าน :  <span>4.20</span> / <span> 5 </span></p>
+                              
+                              <a href="#" class=" ml-auto colorbtn btn btn-primary disabled"> สั่งอาหาร</a>
+                            </div> 
+                       </div>
+                      </div>
+
+            
+            
+    
+
+
+             
+         
+           
+       </div>
+      
+      
+      </div>
+
+    
+           
+
+            
+            
+            
+            
+    
+              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+
+
+    
+
+</body>
+</html>

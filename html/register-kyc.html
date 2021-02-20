@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" >
+    <link rel="stylesheet" href="/node_modules/bootstrap/glyphicons/css/bootstrap.icon-large.min.css">
+
+    <!-- Date pickup -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+
+  </head>
+
+  
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pb-2 " >
+              <a class="navbar-brand " href="#">EAT HERE</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">เกี่ยวกับเรา <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                          <a class="nav-link" href="" data-toggle="modal" data-target="#modalRegisterForm">สมัครสมาชิก<span class="sr-only">(current)</span></a>
+                        </li>
+                  
+                        <li class="nav-item active">
+                          <a class="nav-link" href="" data-toggle="modal" data-target="#modalSigninForm">เข้าสู่ระบบ<span class="sr-only">(current)</span></a>
+                        </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">0 บาท</a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาออเดอร์อาหาร" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">เช็ครายการสั่งอาหาร</button>
+                </form>
+              </div>
+            </nav>
+
+
+            <modal>
+            <!-- sign up-->
+
+            <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center justify-content-center ">
+                  <h4 class="modal-title w-100 h5 ">สมัครสมาชิก</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-1 ">
+                  <div class="md-form mb-1">
+                    <i class="  prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="name">ชื่อ</label>
+                    <input type="text" id="name" class="form-control validate " placeholder="ชื่อ">
+                    
+                  </div>
+                  <div class="md-form mb-1">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                    <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                    
+                  </div>
+          
+                  <div class="md-form mb-1">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                    <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                    
+                  </div>
+                  
+                  <div class="md-form mb-1 my-2">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="telephone">เบอร์โทรศัพท์</label>
+                    <input type="text" id="telephone" class="form-control validate" placeholder="เบอร์โทรศัพท์10หลัก">
+                    
+                  </div>
+                  
+
+                  <div class="md-form mb-1 mt-2  form-check">
+                
+                    
+                    <input class="form-check-input" type="checkbox" id="accept">
+                    <label class="form-check-label" for="accept">
+                      ยอมรับเงื่อนไขของทางบริษัท
+                    </label>
+                  
+                
+              </div>
+                </div>
+
+
+                
+
+                <div class="modal-footer d-flex justify-content-center w-100">
+                  <button class="btn btn-lg colorbtn text-white " id="register" type="submit"> ลงทะเบียน</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sign up-->
+
+          <div class="modal fade" id="modalSigninForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center justify-content-center ">
+                  <h4 class="modal-title w-100 h5 ">เข้าสู่ระบบ</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-1 ">
+                  
+                  <div class="md-form mb-1">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                    <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                    
+                  </div>
+          
+                  <div class="md-form mb-1">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                    <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                    
+                  </div>
+                                 
+                  
+
+                  <div class="md-form mb-1 mt-2  ">
+                
+                    
+                   
+                    <a href="" class="mb-2" style="color: inherit;" data-toggle="modal" data-target="#modalforgotForm">กรณีลืมลืมรหัสผ่าน</a> 
+                  </div>    
+                   
+                
+              
+                </div>
+
+
+                
+
+                <div class="modal-footer d-flex justify-content-center w-100">
+                  <button class="btn btn-lg colorbtn text-white " id="signin" type="submit"> เข้าสู่ระบบ</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--forgot password-->
+          <div class="modal fade" id="modalforgotForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center justify-content-center ">
+                  <h4 class="modal-title w-100 h5 ">ลืมรหัสผ่าน</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-1 ">
+
+                  <div class="md-form mb-1">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="">ถ้าลืมรหัสผ่านโปรดกรอกอีเมลล์เพื่อรับรหัสผ่าน</label>
+                    
+                    
+                  </div>
+                  
+                  <div class="md-form mb-1">
+                    <i class=" prefix dark-text"></i>
+                    <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                    <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                    
+                  </div>
+          
+                </div>
+
+                <div class="modal-footer d-flex justify-content-center w-100">
+                  <button class="btn btn-lg colorbtn text-white " id="submitforgot" type="submit"> ส่งไปยังอีเมลล์</button>
+                </div>
+              </div>
+            </div>
+          </div>
+</modal>
+          </header>
+
+
+
+
+
+                    <div class="jumbotron-fluid    mt-3 mb-3 section3 ">
+                            <div class="container ">
+                      <!--   
+                    <img src="/New folder/foodiesfeed.png" class="img-fluid" alt="Responsive image" height="35%" width="100%"/>  -->   
+                     <div class="row justify-content-center ">
+                            <h1 class="display-1 text-dark">EAT HERE</h1>
+                            <div class="row col-12 justify-content-center">
+                                    
+                            </div>
+                     </div>
+                            
+        
+                            
+                   
+                     
+                    </div>
+                </div>
+
+                <div class="container ">
+                    <div class="row justify-content-center ">
+                      <h3 class="">สมัครได้แล้ววันนี้และรอการตอบรับพิจารณา</h3>
+                            
+                                
+
+                          
+                            </div>
+                                
+                            <form class="needs-validation" novalidate>
+                                    <div class="form-row">
+                                      <div class="col-md-4 mb-3">
+                                        <label for="validationTooltip01">ชื่อ</label>
+                                        <input type="text" class="form-control" id="validationTooltip01" placeholder="ชื่อ" value="ชื่อ" required>
+                                        <div class="valid-tooltip">
+                                          Looks good!
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 mb-3">
+                                        <label for="validationTooltip02">นามสกุล</label>
+                                        <input type="text" class="form-control" id="validationTooltip02" placeholder="นามสกุล" value="นามสกุล" required>
+                                        <div class="valid-tooltip">
+                                          Looks good!
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 mb-3">
+                                        <label for="validationTooltipUsername">ชื่อที่ใช้แสดง</label>
+                                        <div class="input-group">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                          </div>
+                                          <input type="text" class="form-control" id="validationTooltip03" placeholder="ชื่อที่ใช้แสดง" aria-describedby="validationTooltipUsernamePrepend" required>
+                                          <div class="invalid-tooltip">
+                                            Please choose a unique and valid username.
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                            <div class="col-md-3 mb-3">
+                                              <label for="validationTooltip03">อายุ</label>
+                                              <input type="text" class="form-control" id="validationTooltip03" placeholder="ปี" required>
+                                              
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                            <label for="validationTooltip03">รหัสบัตรประชาชน13หลัก</label>
+                                            <input type="text" class="form-control" id="validationTooltip03" placeholder="รหัสบัตรประชาชน13หลัก" required>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                              <label for="validationTooltip05">วัน/เดือน/ปี เกิด</label>
+                                              <input type="text" class="form-control validate" id="datepicker" placeholder="วัน/เดือน/ปี เกิด" required>
+                                              
+                                            </div>
+                                          </div>
+                                    <div class="form-row">
+                                      <div class="col-md-9 mb-3">
+                                        <label for="validationTooltip03">ที่อยู่ บ้านเลขที่</label>
+                                        <input type="text" class="form-control" id="validationTooltip03" placeholder="Address" required>
+                                        
+                                      </div>
+                                      <div class="col-md-3 mb-3">
+                                        <label for="validationTooltip04">ถนน/ซอย</label>
+                                        <input type="text" class="form-control" id="validationTooltip04" placeholder="Street" required>
+                                        
+                                      </div>
+                                      
+                                    </div>
+
+
+                                    <div class="form-row">
+                                        <div class="col-md-3 mb-3">
+                                            <label for="validationTooltip05">ตำบล</label>
+                                            <input type="text" class="form-control" id="validationTooltip05" placeholder="ตำบล" required>
+                                            
+                                          </div>
+                                            <div class="col-md-3 mb-3">
+                                              <label for="validationTooltip03">อำเภอ</label>
+                                              <input type="text" class="form-control" id="validationTooltip03" placeholder="อำเภอ" required>
+                                              
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                            <label for="validationTooltip03">จังหวัด</label>
+                                              <select class="form-control  "  id=""  >
+                                                                <option>โปรดเลือกจังหวัด</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                              </select>
+                                            </div>
+                                            
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-md-6 mb-3">
+                                                  <label for="validationTooltip05">โค้ดที่อยู่จาก Google map</label>
+                                                  <input type="text" class="form-control" id="validationTooltip05" placeholder="Pin location" required>
+                                                  
+                                                  
+                                                </div>
+
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="validationTooltip05">วิธีการใช้โค้ดจาก Google map</label>
+                                                    
+                                                    
+                                                    
+                                                  </div>
+
+                                                
+                                            
+                                          </div>
+
+                                          <div class="form-row">
+                                                <div class="col-md-3 mb-3">
+                                                        <label for="validationTooltip03">ประเภทพาร์ทเนอร์</label>
+                                                        
+                                              </div>
+
+                                            </div> 
+                                              <fieldset class="form-group form-row">
+                                                    <div class="row">
+                                                      
+                                                      <div class="col-md-3 mb-3">
+                                                        <div class="form-check">
+                                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                                          <label class="form-check-label" for="gridRadios1">
+                                                            ร้านอาหาร
+                                                          </label>
+                                                        </div>
+                                                        
+                                                    </div>
+
+                                                    <div class="col-md-3 mb-3">
+                                                            <div class="form-check">
+                                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                                              <label class="form-check-label" for="gridRadios2">
+                                                                คนส่ง
+                                                              </label>
+                                                            </div>
+                                                            </div>
+                                                        </fieldset>
+                                    
+                                      
+                                        <div class="form-group">
+                                                <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                                <label class="form-check-label" for="invalidCheck2">
+                                                                    Agree to terms and conditions
+                                                </label>
+                                            </div>
+                                         </div>    
+                                                              
+                                
+                                    
+
+                                    <button class="btn btn-primary btn-lg  footer-block w-100 sticky-top text-white colorbtn " type="submit" style="padding-top: 1em; padding-bottom: 1em;">ร่วมเป็นพาร์ทเนอร์กับเรา</button>
+                                  </form>
+
+                    </div>
+                    
+                </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <!--Date pickup-->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
+  
+  </script>
+  </body>
+</html>

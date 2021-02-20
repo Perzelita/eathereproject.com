@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" >
+    <link rel="stylesheet" href="/node_modules/bootstrap/glyphicons/css/bootstrap.icon-large.min.css">
+    
+  </head>
+  <body>
+     <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pb-2 " >
+                <a class="navbar-brand " href="#">EAT HERE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">เกี่ยวกับเรา <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                            <a class="nav-link" href="" data-toggle="modal" data-target="#modalRegisterForm">สมัครสมาชิก<span class="sr-only">(current)</span></a>
+                          </li>
+                    
+                          <li class="nav-item active">
+                            <a class="nav-link" href="" data-toggle="modal" data-target="#modalSigninForm">เข้าสู่ระบบ<span class="sr-only">(current)</span></a>
+                          </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">0 บาท</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาออเดอร์อาหาร" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="/order-status.html">เช็ครายการสั่งอาหาร</button></a>m
+                  </form>
+                </div>
+              </nav>
+
+
+              <modal>
+              <!-- sign up-->
+
+              <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">สมัครสมาชิก</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+                    <div class="md-form mb-1">
+                      <i class="  prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="name">ชื่อ</label>
+                      <input type="text" id="name" class="form-control validate " placeholder="ชื่อ">
+                      
+                    </div>
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                      <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                      
+                    </div>
+                    
+                    <div class="md-form mb-1 my-2">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="telephone">เบอร์โทรศัพท์</label>
+                      <input type="text" id="telephone" class="form-control validate" placeholder="เบอร์โทรศัพท์10หลัก">
+                      
+                    </div>
+                    
+
+                    <div class="md-form mb-1 mt-2  form-check">
+                  
+                      
+                      <input class="form-check-input" type="checkbox" id="accept">
+                      <label class="form-check-label" for="accept">
+                        ยอมรับเงื่อนไขของทางบริษัท
+                      </label>
+                    
+                  
+                </div>
+                  </div>
+
+
+                  
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="register" type="submit"> ลงทะเบียน</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- sign in-->
+
+            <div class="modal fade" id="modalSigninForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">เข้าสู่ระบบ</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+                    
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="passowrd">รหัสผ่าน</label>
+                      <input type="password" id="password" class="form-control validate" placeholder="รหัสผ่าน">
+                      
+                    </div>
+                                   
+                    
+
+                    <div class="md-form mb-1 mt-2  ">
+                  
+                      
+                     
+                      <a href="" class="mb-2" style="color: inherit;" data-toggle="modal" data-target="#modalforgotForm">กรณีลืมลืมรหัสผ่าน</a> 
+                    </div>    
+                     
+                  
+                
+                  </div>
+
+
+                  
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                      
+                    <button class="btn btn-lg colorbtn text-white " id="signin" type="submit "> เข้าสู่ระบบ</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!--forgot password-->
+            <div class="modal fade" id="modalforgotForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center justify-content-center ">
+                    <h4 class="modal-title w-100 h5 ">ลืมรหัสผ่าน</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-1 ">
+
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="">ถ้าลืมรหัสผ่านโปรดกรอกอีเมลล์เพื่อรับรหัสผ่าน</label>
+                      
+                      
+                    </div>
+                    
+                    <div class="md-form mb-1">
+                      <i class=" prefix dark-text"></i>
+                      <label data-error="wrong" data-success="right" for="email">อีเมลล์</label>
+                      <input type="email" id="email" class="form-control validate" placeholder="อีเมลล์">
+                      
+                    </div>
+            
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-center w-100">
+                    <button class="btn btn-lg colorbtn text-white " id="submitforgot" type="submit"> ส่งไปยังอีเมลล์</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+</modal>
+            </header>
+
+
+
+
+                    <div class="container-fluid mt-3 mb-3 ">
+                        <div class="row justify-content-center ">
+                        <form action="" method="post">
+                          
+                              
+                                  
+                              <form class="form-inline">
+                                  
+                                
+                                  
+                                  <div class="input-group mb-3 align-items-baseline">
+                                      <span class=""><h5> ตำแหน่งการจัดส่ง  &NonBreakingSpace;</h5></span>
+                                      <input type="text" style="width:220px;" class="form-control-lg rounded border border-secondary text-black-50 " placeholder="ํตำแหน่งปัจจุบัน" aria-label="ที่อยู่บ้าน หอพัก สำนักงาน หรือ คอนโด" aria-describedby="basic-addon2">
+                                      <span>
+                                          <button class="btn btn-lg btn-outline-secondary " type="button"> 
+                                              <img src="/1077966-ecommerce/png/032-location.png" width="26px" height="26px">
+                                            </button>
+                                      </span>
+                                        
+                                        
+                                      </div>
+                                    </div>
+                              </form>
+                              
+                              
+                        </form>
+                   
+                    
+
+                  </div>
+                  
+                  
+                  <div class="jumbotron jumbotron-fluid mt-3 mb-3 section p-0 shadow "  >
+                    
+                    <a href="" data-toggle="modal" data-target="#modalDetailResForm">
+                        <img src="/Picture/หมูทอดเบรกแตก5.jpg" alt="" style="height: 480px; width: 100%;   object-fit: cover; ">
+                      </a>
+                  </div>
+
+                  <div class="jumbotron jumbotron mb-3 bg-transparent shadow-sm " style="padding-top:0.75em; padding-bottom: 0.75em; ">
+                      <div class="container " >
+                        
+                          <div class="row  " >
+                         <ul class="list-inline align-items-baseline">
+                            <li class="list-inline-item "><h3>ร้านเค้กบิ้กบึ้ม</h3></li>
+                          <li class="list-inline-item "> &NonBreakingSpace;  </li> 
+                          <li class="list-inline-item "><h5>อาหารคาว</h5></li>
+                          <li class="list-inline-item"><h5>อาหารหวาน</h5></li>
+                          
+                        </ul>
+                        
+                        </div>
+                      </div>
+                    </div>
+                  
+                  <div class="container-fluid  mb-3  " >
+                      <div class="row justify-content-center ">
+                      <form class="form-inline ">
+                       
+                            <div class="form-group  my-2 lead align-items-baseline" > 
+                              <h5>
+                                <label for="sel1" >เลือกเวลาในการจัดส่ง &nbsp </label>
+                              </h5>
+                                <select class="form-control  rounded border border-secondary  border-secondary "  id="timedelivery"  >
+                                  <option>โปรดเลือกเวลาในการจัดส่งสินค้า</option>
+                                  <option><span>19</span> : <span>00</span></option>
+                                  <option><span>21</span> : <span>00</span></option>
+                                  
+                                </select>
+                              </div>
+                        
+                      </form>                 
+
+                      </div>
+                </div>
+
+
+
+                <div class="jumbotron jumbotron mb-3 bg-transparent shadow-sm  " style="padding-top:1.25em; padding-bottom: 1.25em; "> 
+                    <div class="container">
+                        
+                          <div class="row justify-content-left">
+                            <div class="col-5">เค้กหมูสามชั้น 1 ปอนด์</div>
+                            <div class="col-1">380 บาท</div>
+                            <div class="col-2"></div>
+                            <div class="col-4">
+                              
+                                <input type="number" value="1" min="0" max="1000" step="1"/>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+
+                <div class="jumbotron jumbotron mb-3 bg-transparent shadow-sm " style="padding-top:1.25em; padding-bottom: 1.25em; "> 
+                      <div class="container">
+                          
+                            <div class="row justify-content-left">
+                              <div class="col-5">เค้กหมูสามชั้น 2 ปอนด์</div>
+                              <div class="col-1">550 บาท</div>
+                              <div class="col-2"></div>
+                              <div class="col-4">
+                                
+                                  <input type="number" value="0" min="0" max="1000" step="1"/>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jumbotron jumbotron mb-3 bg-transparent shadow-sm " style="padding-top:1.25em; padding-bottom: 1.25em; "> 
+                        <div class="container">
+                            
+                            <div class="row justify-content-left">
+                                <div class="col-5">เค้กหมูสามชั้น 3 ปอนด์</div>
+                                <div class="col-1">700 บาท</div>
+                                <div class="col-2"></div>
+                                <div class="col-4">
+                                  
+                                    <input type="number" value="0" min="0" max="1000" step="1"/>
+                                </div>
+                              </div>
+                          </div>
+                      </div>                    
+                  
+
+                  <modal2>
+                      <form >
+                          <div class="modal fade" id="modalDetailResForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header text-center  ">
+                                <h4 class="modal-title w-100 h5 ">ร้านเค้กบิ้กบึ้ม</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body mx-1 ">
+                                <div class=" mb-1">
+                                  <h3>ที่อยู่ของร้าน</h3>
+                                  
+                                  
+                                  
+                                  <div class="modal-body mx-1 ">
+                                          <div class="  ">
+                                            <p class="  prefix dark-text" >
+                                              <span>ร้านเค้กบึ้กบึ้ม &NonBreakingSpace;</span>
+                                              <span>คณะวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น 123 &NonBreakingSpace;</span>
+                                              <span>ถนน</span>
+                                              <span>มิตรภาพ &NonBreakingSpace;</span><br>
+
+                                              <span>ตำบล &NonBreakingSpace;</span>
+                                              <span>ศิลา &NonBreakingSpace;</span>
+
+                                              <span>อำเภอ &NonBreakingSpace;</span>
+                                              <span>เมืองขอนแก่น &NonBreakingSpace;</span>
+
+                                              <span>ขอนแก่น &NonBreakingSpace;</span><br>
+
+                                              <span>40002 &NonBreakingSpace;</span>
+
+                                            </h5>
+
+                                           
+                                                <h5>ประเภทของร้าน</h5>                         
+                                                <p class="">ปรเภทอาหาร : <span > อาหารคาว, เค้ก </span>
+              
+                                                  <br> เปิดร้าน :  <span>จันทร์-ศุกร์</span></p>  
+                                        
+      
+                                  </div>
+                                  </div>
+                                  
+                                  <h4>ตำแหน่งของร้าน</h4>
+                                  
+                              
+                                  <div class="modal-body  border-0 justify-content-center ">
+
+                                      <div class="mapouter "><div class="gmap_canvas"><iframe width="430" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C%20%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+                              
+                                    </div>
+                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                              
+                  </modal2>
+
+
+
+                  <div class="jumbotron jumbotron bg-transparent shadow-sm " style="padding-top:0.75em; padding-bottom: 0.75em; ">
+                      <div class="container  " >
+                        
+                          <div class="row  " >
+                         <ul class="list-inline align-items-baseline">
+                            <li class="list-inline-item "><h3>คะแนนและรีวิว</h3></li>
+                          
+                            <li class="list-inline-item "><h3>5/5</h3></li>
+                        </ul>
+
+                        
+                       
+                        </div>
+                        
+                        <div class="row align-content-center align-items-sm-baseline align-items-sm-center  ">
+                            
+                                
+                              <div class="col-sm-2 font-weight-bold ">
+                                  ชื่อผู้ใช้
+                              </div>
+                              <div class="col-sm-2">
+                                  ET-123456789
+                              </div>
+                              <div class="col-sm-4">
+                                  เค้กอร่อยมากค่ะ
+                                  
+                                  
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <div class="media">
+                                        <a class="d-flex" href="#">
+                                          <img src="/Picture/หมูทอดเบรกแตก5.jpg" alt="" style="height: 50px; width:50px;">
+                                        </a>
+                                        
+                                      </div>
+                                </div>
+
+                                <div class="col-sm-2">
+                                5/5
+                                  </div>
+
+                                
+                            
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="jumbotron jumbotron bg-transparent shadow-sm " style="padding-top:0.75em; padding-bottom: 0.75em; "></div>
+
+                    <footer class="fixed-bottom">
+                        <div id="footer">
+                                <div class="container ">
+            
+                                  <a name="่" id="" class="btn btn-primary footer-block w-100 sticky-top text-white colorbtn " 
+                                  href="../html/cart.html" role="button" style="padding-top: 1em; padding-bottom: 1em;"
+                                  >
+                                    <div class="lead">ดำเนินการต่อ</div>
+                                    
+                                  </a>
+            
+                                </div>
+            
+                              </div>
+    
+                            </footer>
+
+                
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="/node_modules/bootstrap-input-spinner/src/bootstrap-input-spinner.js"></script>
+    <script>
+        $("input[type='number']").inputSpinner()
+    </script>
+  </body>
+
+
+</html>
