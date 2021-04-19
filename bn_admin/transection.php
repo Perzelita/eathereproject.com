@@ -121,43 +121,47 @@
   <!-- Main Content -->
   <div id="content">
 
-    <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-      <!-- Sidebar Toggle (Topbar) -->
-      <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-        <i class="fa fa-bars"></i>
-      </button>
+<!-- Sidebar Toggle (Topbar) -->
+<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+  <i class="fa fa-bars"></i>
+</button>
 
-      <!-- Topbar Search -->
-      
 
-      <!-- Topbar Navbar -->
-      <ul class="navbar-nav ml-auto">
 
-        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-      
-          <!-- Dropdown - Messages -->
-          
+<!-- Topbar Navbar -->
+<ul class="navbar-nav ml-auto">
 
-        <!-- Nav Item - Alerts -->
+
+
+ 
     
-            <!-- Counter - Alerts -->
-           
-          
-          <!-- Dropdown - Alerts -->
-         
+ 
 
-        <!-- Nav Item - Messages -->
-      
+  <div class="topbar-divider d-none d-sm-block"></div>
 
-        <div class="topbar-divider d-none d-sm-block"></div>
+  <!-- Nav Item - User Information -->
+  <li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle text-black-50" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Logout
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+    
 
 
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Logout
+      </a>
+    </div>
+  </li>
 
-      </ul>
+</ul>
 
-    </nav>
+</nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -166,7 +170,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tables</h1>
             <?php 
-            require_once('../php_front/authen.php');
+            require_once('../php_cruid/connect_DB.php');
 
             $sql = "SELECT * FROM `transcription`  ORDER BY `transcription`.`date` ASC";
           $result = $conn->query($sql);

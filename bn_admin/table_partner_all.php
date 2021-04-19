@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>EATHERE ADMIN -LIST PARTNER</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -122,54 +122,47 @@
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+<!-- Sidebar Toggle (Topbar) -->
+<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+  <i class="fa fa-bars"></i>
+</button>
 
-          <!-- Topbar Search -->
-          
 
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-          
-              <!-- Dropdown - Messages -->
-              
+<!-- Topbar Navbar -->
+<ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Alerts -->
-        
-                <!-- Counter - Alerts -->
-               
-              
-              <!-- Dropdown - Alerts -->
-             
 
-            <!-- Nav Item - Messages -->
-          
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+ 
+    
+ 
 
-            <!-- Nav Item - User Information -->
-       
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-               
-              <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
+  <div class="topbar-divider d-none d-sm-block"></div>
 
-          </ul>
+  <!-- Nav Item - User Information -->
+  <li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle text-black-50" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Logout
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+    
 
-        </nav>
+
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Logout
+      </a>
+    </div>
+  </li>
+
+</ul>
+
+</nav>
 
     <!-- Content Wrapper -->
   
@@ -180,7 +173,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">ตาราง partner</h1>
+          <h1 class="h3 mb-2 text-gray-800">ตารางรายชื่อpartnerทั้งหมด</h1>
         <?php  require_once('../php_cruid/connect_DB.php');
 
           $sql = "SELECT * FROM `member` WHERE NOT `status_member` = 'cus' AND NOT `status_member` = 'admin'  ";
@@ -191,7 +184,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">ศูนย์รวม Partner ที่ได้ผ่านการยืนยันตนในระบบKYCแล้ว</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -203,6 +196,8 @@
                       <th scope="col">ที่อยู่</th>
                       <th scope="col">ตำบล</th>
                       <th scope="col">อำเภอ</th>
+                      <th scope="col">จังหวัด</th>
+
                       <th scope="col">รหัสไปรษณีย์</th>
                       <th scope="col">ชื่อผู้ใช้</th>
                       <th scope="col">เลขโทรศัพท์</th>
@@ -216,6 +211,8 @@
                     
                       <th scope="col">วันเกิด</th>
                       <th scope="col">ชื่อร้าน</th>
+                      <th scope="col">ประเภทของร้าน</th>
+
                       <th scope="col">เวลาเปิดรับ</th>
                       <th scope="col">เวลาปิดรับ</th>
                       <th scope="col">ประวัติร้านคร่าวๆ</th>
@@ -233,13 +230,10 @@
                       <th scope="col">รูปพรบรถหน้าแรก</th>
                       <th scope="col">พิกัด</th>
 
-                      <th scope="col">เป็นสมาชิกวันที่</th>
 
-                      <th scope="col">อัพเดตล่าสุด</th>
 
 
                       <th scope="col">จำนวนเงิน</th>
-                      <th scope="col">loginล่าสุด</th>
 
 
 
@@ -247,12 +241,14 @@
                     </tr>
                   </thead>
                   <tfoot>
-                    <tr>
-                    <th scope="col">หมายเลขสมาชิก</th>
+                  <tr>
+                      <th scope="col">หมายเลขสมาชิก</th>
                       <th scope="col">สถานะ</th>
                       <th scope="col">ที่อยู่</th>
                       <th scope="col">ตำบล</th>
                       <th scope="col">อำเภอ</th>
+                      <th scope="col">จังหวัด</th>
+
                       <th scope="col">รหัสไปรษณีย์</th>
                       <th scope="col">ชื่อผู้ใช้</th>
                       <th scope="col">เลขโทรศัพท์</th>
@@ -266,6 +262,8 @@
                     
                       <th scope="col">วันเกิด</th>
                       <th scope="col">ชื่อร้าน</th>
+                      <th scope="col">ประเภทของร้าน</th>
+
                       <th scope="col">เวลาเปิดรับ</th>
                       <th scope="col">เวลาปิดรับ</th>
                       <th scope="col">ประวัติร้านคร่าวๆ</th>
@@ -283,13 +281,10 @@
                       <th scope="col">รูปพรบรถหน้าแรก</th>
                       <th scope="col">พิกัด</th>
 
-                      <th scope="col">เป็นสมาชิกวันที่</th>
 
-                      <th scope="col">อัพเดตล่าสุด</th>
 
 
                       <th scope="col">จำนวนเงิน</th>
-                      <th scope="col">loginล่าสุด</th>
                       
                     </tr>
                   </tfoot>
@@ -299,23 +294,36 @@
                               <tr>
                               <th scope="row"><?php echo $row["member_id"]; ?></th>
                               <td><?php echo $row["status_member"]; ?></td>
-                              <td><?php echo $row["user"]; ?></td>
-                              <td><?php echo $row["telephone"]; ?></td>
-                              <td><?php echo $row["email"]; ?></td>
+                              
                               <td><?php echo $row["no_address"]; ?></td>
                               <td><?php echo $row["district"]; ?></td>
                               <td><?php echo $row["amphoe"]; ?></td>
                               <td><?php echo $row["province"]; ?></td>
                               <td><?php echo $row["zipcode"]; ?></td>
+                              <td><?php echo $row["user"]; ?></td>
+
+                              <td><?php echo $row["telephone"]; ?></td>
+                              <td><?php echo $row["email"]; ?></td>
                               <td><?php echo $row["name"]; ?></td>
                               <td><?php echo $row["surname"]; ?></td>
-                              <td><?php echo $row["age"]; ?></td>
+                              <td><?php
+                                        $birthDate = $row["birthday"];
+
+                                        $birthDate = explode("-", $birthDate);
+
+                                        $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[2], $birthDate[1], $birthDate[0]))) > date("md") ? ((date("Y")-$birthDate[0])-1):(date("Y")-$birthDate[0]));
+echo $age;
+?></td>
                               <td><?php echo $row["citizen_id"]; ?></td>
                               <td><?php echo $row["birthday"]; ?></td>
                               <td><?php echo $row["partner_name"]; ?></td>
                               <td><?php echo $row["food_type"]; ?></td>
                               <td><?php echo $row["open_order"]; ?></td>
                               <td><?php echo $row["close_order"]; ?></td>
+                              <td><?php echo $row["bio"]; ?></td>
+                              <td><?php echo $row["created"]; ?></td>
+
+
                               <td><a class="btn btn-info" href="../pic/kyc/<?php echo $row["pic_profile"]; ?> " role="button">ดูรูปหน้าตรง</a></td>
                               <td><a class="btn btn-info" href="../pic/kyc/<?php echo $row["pic_ctizen_id"]; ?> " role="button">ดูรูปบัตรประชาชน</a></td>
                               <td><a class="btn btn-info" href="../pic/kyc/<?php echo $row["pic_cover"]; ?> " role="button">ดูรูปหน้าร้าน</a></td>
@@ -329,10 +337,7 @@
                 <td><a class="btn btn-info" href="../pic/kyc/<?php echo $row["pic_booking_driver"]; ?> " role="button">ดูรูปพรบรถหน้าแรก</a></td>
                 <td><a class="btn btn-info" href="https://www.google.com/maps/search/?api=1&query=<?php print  $row["latitude"] .",".$row["longitude"];?> " role="button" target="_blank">ดูพิกัด</a></td>
 
-                <td><?php echo $row["created"]; ?></td>
-                              <td><?php echo $row["updated"]; ?></td>
                               <td><?php echo $row["balance"]; ?></td>
-                              <td><?php echo $row["last_login"]; ?></td>
                         </tr>
                             <?php } ?> 
                          </tbody>

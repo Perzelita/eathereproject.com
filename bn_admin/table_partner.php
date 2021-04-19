@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>EATHERE ADMIN DASHBOARD</title>
+  <title>EATHERE ADMIN Partner Request</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -121,63 +121,55 @@
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+<!-- Sidebar Toggle (Topbar) -->
+<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+  <i class="fa fa-bars"></i>
+</button>
 
-          <!-- Topbar Search -->
-          
 
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-          
-              <!-- Dropdown - Messages -->
-              
+<!-- Topbar Navbar -->
+<ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Alerts -->
-        
-                <!-- Counter - Alerts -->
-               
-              
-              <!-- Dropdown - Alerts -->
-             
 
-            <!-- Nav Item - Messages -->
-          
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+ 
+    
+ 
 
-            <!-- Nav Item - User Information -->
+  <div class="topbar-divider d-none d-sm-block"></div>
 
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-               
-              <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
+  <!-- Nav Item - User Information -->
+  <li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle text-black-50" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Logout
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+    
 
-          </ul>
 
-        </nav>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Logout
+      </a>
+    </div>
+  </li>
+
+</ul>
+
+</nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-          <?php require_once('../php_cruid/connect_DB.php');
+          <h1 class="h3 mb-2 text-gray-800">คำขอร่วมเป็นร้านค้า</h1>
+          <p class="mb-4">ตารางรายการคำร้องขอร่วมเป็นร้านค้าของเรา</p>          <?php require_once('../php_cruid/connect_DB.php');
 
           $sql = "SELECT * FROM `request_kyc` WHERE type_kyc = 'partner' AND status_verify_id ='0' ";
           $result = $conn->query($sql) or die($conn->error)  ;
@@ -188,7 +180,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">รายละเอียดสำหรับการพิจารณา</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -274,7 +266,14 @@
                               <td><?php echo $row["user"]; ?></td>
                               <td><?php echo $row["name"]; ?></td>
                               <td><?php echo $row["surname"]; ?></td>
-                              <td><?php echo $row["age"]; ?></td>
+                              <td><?php
+                                        $birthDate = $row["birthday"];
+
+                                        $birthDate = explode("-", $birthDate);
+
+                                        $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[2], $birthDate[1], $birthDate[0]))) > date("md") ? ((date("Y")-$birthDate[0])-1):(date("Y")-$birthDate[0]));
+echo $age;
+?></td>
                               <td><?php echo $row["citizen_id"]; ?></td>
                               <td><?php echo $row["email"]; ?></td>
                               <td><?php echo $row["telephone"]; ?></td>
