@@ -282,10 +282,10 @@ $numrow=mysqli_num_rows($result);
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">จะออกจากระบบหรือไม่</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="../php_front/signout.php" >Logout</a>
         </div>
       </div>
     </div>
