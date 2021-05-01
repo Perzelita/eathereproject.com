@@ -246,7 +246,6 @@ require_once('../php_front/authen.php');?>
 ?>
                               <?php echo $read_status["menu_id"]; echo" "; echo $read_status["menu_name"];echo " จำนวน "; echo$read_status["unit"];echo"<br>"; ?>
                              </td>
-                              <?php?>
                               <td><?php echo $read_status["total"]; echo '/';echo $read_status["early"]; echo '/'; echo $read_status["extra_early"]; ?></td>
                               <input type="hidden" name="total" value="<?php echo$read_status['total'];?>">
                               <input type="hidden" name="early" value="<?php echo$read_status['early'];?>">

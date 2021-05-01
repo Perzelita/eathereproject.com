@@ -3,6 +3,8 @@ require_once(  '../section/head.php');
 require_once( '../section/header-navbar-modal.php');
 require_once('../php_cruid/connect_DB.php');
 date_default_timezone_set("Asia/Bangkok");
+error_reporting(E_ALL);
+
 if (isset($_SESSION['telephone'])){  
 $readcart="SELECT* FROM cart_temp WHERE member_id= '".$_SESSION['member_id']."';";
 $result_read= $conn->query($readcart) or die ($conn->error);  

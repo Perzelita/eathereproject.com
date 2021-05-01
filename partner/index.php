@@ -1,3 +1,14 @@
+<?php require_once('../php_cruid/connect_DB.php');
+
+
+  
+
+
+ 
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -124,67 +135,233 @@
                 <div class="container ">
                     <div class="row justify-content-center mt-3">
                       <h3 class="">สมัครได้แล้ววันนี้และรอการตอบรับพิจารณา</h3>
-                      <h3 class="">ตรวจสอบข้อมูลเบื้องต้น</h3>
                             
                                 
 
                           
                             </div>
                                 
-                            <form id="demo1" class="demo" style="display:none" autocomplete="off" action="partner.php" method="post" enctype="multipart/form-data" >
+                            <form id="demo1" class="demo" style="display:none" autocomplete="off" action="../php_cruid/create_register_kyc.php" method="post" enctype="multipart/form-data" >
                                     <div class="form-row">
-                                     
-                                              
-                                            
-                                            <div class="col-md-3 mb-3">
+                                      <div class="col-md-4 mb-3">
+                                        <label for="">ชื่อ</label>
+                                        <input type="text" class="form-control" id="" name="name" placeholder="ชื่อ"  value="" requried>
+                                        
+                                      </div>
+                                      <div class="col-md-4 mb-3">
+                                        <label for="">นามสกุล</label>
+                                        <input type="text" class="form-control" id=""  name="surname" placeholder="นามสกุล"  value="" requried>
+                                        <div class="valid-tooltip">
+                                          Looks good!
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 mb-3">
+                                        <label for="Username">ชื่อที่ใช้แสดง</label>
+                                        <div class="input-group">
+                                          
+                                          <input type="text" class="form-control" id="" name="user" placeholder="ชื่อที่ใช้แสดง" aria-describedby="UsernamePrepend" requried>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                           
+                                            <div class="col-md-2 mb-3">
                                               <label for="">รหัสบัตรประชาชน13หลัก</label>
-                                              <input type="text" class="form-control" id="citizen_id" name="citizen_id" placeholder="รหัสบัตรประชาชน13หลัก" mask="0-0-000-00-000-00-0" >
+                                              <input type="number" class="form-control" id="citizen_id" name="citizen_id" placeholder="รหัสบัตรประชาชน13หลัก" mask="0-0-000-00-000-00-0" value="" >
                                             </div>
-                                            
                                             
                                                                                       
 
-                                           
-                                            
-                                            <div class="col-md-2 mb-2">
-                                              <label for="">เบอร์โทรศัพท์</label>
-                                              <input type="text" class="form-control validate" name="telephone" id="telephone" placeholder="เบอร์โทรศัพท์" >
+                                            <div class="col-md-2 mb-3">
+                                              <label for="">วัน/เดือน/ปี เกิด</label>
+                                              <input type="date" class="form-control validate" name="birthday" id="" placeholder="วัน/เดือน/ปี เกิด" requried>
                                             </div>
 
-                                           
+                                            <div class="col-md-3 mb-3">
+                                              <label for="">อีเมลล์</label>
+                                              <input type="email" class="form-control validate" name="email"  placeholder="อีเมลล์" requried>
+                                            </div>
                                             
+                                            <div class="col-md-3 mb-3">
+                                              <label for="">เบอร์โทรศัพท์</label>
+                                              <input type="text" class="form-control validate" name="telephone" id="telephone"  placeholder="เบอร์โทรศัพท์" value="" requried>
+                                            </div>
+
+                                            
+                                            
+                                          </div>
+                                          <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                              <label for="">ที่อยู่ บ้านเลขที่</label>
+                                              <input type="text" class="form-control" id="" name="no_address1" placeholder="Address" requried>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                              <label for="">ถนน/ซอย</label>
+                                              <input type="text" class="form-control" id="" name="no_address2" placeholder="Street" requried>
+                                            </div>
+                                            <div class="col-md-3 mb-3 ">
+                                              <label for="">ตำบล</label>
+                                              <input type="text" class="form-control bg-white" id="" name="district" placeholder="ตำบล" requried>
+                                            </div>
+                                          </div>
+                                          <div class="form-row">
+                                        
+                                            <div class="col-md-3 mb-3">
+                                              <label for="">อำเภอ</label>
+                                              <input type="text" class="form-control bg-white" id="" name="amphoe" placeholder="อำเภอ" requried>
+                                              
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                            <label for="">จังหวัด</label>
+                                              <input type="text" class="form-control bg-white" id="" name="province" placeholder="จังหวัด" requried>
+                                            </div>
+
+                                            <div class="col-md-2 mb-3">
+                                              <label for="">รหัสไปรษณีย์</label>
+                                                <input type="text" class="form-control bg-white" id="" name="zipcode" placeholder="รหัสไปรษณีย์" requried>
+                                              </div>
+                                              
+                                                
+
                                           
-                                                <div class="col-md-3 mb-3">
+                                          </div>
+                                          <div class="form-row">
+                                          <div class="col-md-3 mb-3">
                                                     <label for="">โค้ดที่อยู่จาก Google map พิกัด X</label>
-                                                    <input type="text" class="form-control bg-white" id="Latitude" name="latitude" value="" >
+                                                    <input type="text" class="form-control bg-white " id="Latitude" name="latitude"   >
                                                     
                                                     
                                                   </div>
                                                   <div class="col-md-3 mb-3">
                                                     <label for="">โค้ดที่อยู่จาก Google mapพิกัด Y</label>
-                                                    <input type="text" class="form-control bg-white" id="Longitude" name="longitude" value="" > 
+                                                    <input type="text" class="form-control bg-white " id="Longitude" name="longitude"  > 
                                                     
                                                     
                                                   </div>
-                                                  <div class="col-md-1 mb-5 float-right">
+                                                  <div class="col-md-1 mb-3">
                                                     <label for="">&NonBreakingSpace;</label>
                                                     <a name="locations" id="" class="btn btn-primary colorbtn " href="#" role="button" onclick="getLocationConstant()">Location</a>
                                                   </div>
+                                                 
                                           </div>
+                                          <div class="form-row">
+                                            <div class="col-md-4 mb-3">
+                                              <h4>สำหรับรายละเอียดของร้าน</h4>
+                                            </div>
                                           </div>
-                                         
+                                          
+                                          <div class="form-row">
+                                          <div class="col-md-5 mb-3">
+                                              <label for="">ชื่อร้าน</label>
+                                             <input type="text" class="form-control" id="" name="partner_name" placeholder="ชื่อร้าน"  requried>
+                                          </div>
+
+                                          <div class="col-md-3 mb-3">
+                                              <label for="">ประเภทของอาหาร</label>
+                                             
+                                               <select class="form-control" name="food_type" id="food_type">
+                                                 <option >อาหารคาว</option>
+                                                 <option>อาหารหวาน</option>
+                                                 <option>อาหารคาว และ อาหารหวาน</option>
+                                                 <option>เครื่องดื่ม</option>
+                                                 <option>อาหารคาว และ อาหารหวาน และ เครื่องดื่ม</option>
+                                               </select>
+                                             
+                                          </div>
+                                          
+                                          <div class="col-md-2 mb-3">
+                                              <label for="">เวลาเปิดร้าน</label>
+                                             <input type="text" class="form-control" id="open_order" name="open_order" placeholder="ตัวอย่าง : 14.00" requried>
+                                          </div>
+                                          <div class="col-md-2 mb-3">
+                                          <label for="">เวลาปิดร้าน</label>
+                                             <input type="text" class="form-control" id="close_order" name="close_order" placeholder="ตัวอย่าง : 21.00" requried>
+                                            </div>
+
+                                            </div>
+                                            <div class="from-row">
+                                                <div class="col-md-5 mb-3">
+                                                    <label for="">ประวัติของร้านโดยสังเขป</label>
+                                                       <textarea type="text" class="form-control" id="" name="bio"  requried></textarea>
+                                                      
+                                                </div>
+                                            </div>
+                                              
+                                            <div class="form-row">
+                                                <div class="col-md-4 mb-3">
+                                                  <h4>หลักฐานประกอบการสมัคร</h4>
+
+                                            </div>
+                                          </div>
+                                          <div class="form-row">
+                                              <div class="col-md-4 mb-3">
+                                              <label for="">รูปหน้าตรง</label>
+                                              <div class="custom-file">
+                                                  <input type="file" class="custom-file-input" id="customFile" name="pic_profile"accept="image/*" requried>
+                                                  <label class="custom-file-label" for="customFile">รูปภาพประจำตัว ไฟล์ jpg , png</label>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">รูปบัตรประชาชนด้านหน้า</label>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="customFile" name="pic_ctizen_id"accept="image/*" requried>
+                                                    <label class="custom-file-label" for="customFile">บัตรประชาชนด้านหน้า</label>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                  <label for="">รูปอาหาร หรือ ร้านอาหาร</label>
+                                                  <div class="custom-file">
+                                                      <input type="file" class="custom-file-input" id="customFile" name="pic_cover" accept="image/*" requried>
+                                                      <label class="custom-file-label" for="customFile">แนะนำว่าถ่ายแนวนอนเท่านั้น</label>
+                                                  </div>
+                                                </div>
+                                          </div>
+                                          <div class="form-row">
+                                              <div class="col-md-4 mb-3">
+                                              <label for="">รูปบัญชีธนคาร</label>
+                                              <div class="custom-file">
+                                                  <input type="file" class="custom-file-input" id="customFile" name="pic_acc"accept="image/*" requried>
+                                                  <label class="custom-file-label" for="customFile">รูปบัญชีธนคารหน้าแรกเท่านั้น</label>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="">รูปหน้าตัวเอง ถ่ายพร้อมกับคำว่า EatHereพร้อมลายเซ็นต์</label>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="customFile" name="pic_verify"accept="image/*" requried>
+                                                    <label class="custom-file-label" for="customFile">รูปหน้าตัวเอง ถ่ายพร้อมกับคำว่า EatHereพร้อมลายเซ็นต์</label>
+                                                </div>
+                                              </div>
+                                            
+                                                </div>
+                                          </div>
+
+                                          </div>
+
+                                          
+                                          </div>
+                                    
+
+
+                                    
+                                     
+
+                                                
+                                            
+                                          </div>
+
                                          
                                              
                                     
                                       
-                                         
+                                     
                                                               
                                 
                                     
-<footer>
-                                    <input class="btn btn-primary btn-lg  footer-block w-100 sticky-top text-white colorbtn  " name="submit" type="submit" id="submit" value="ตรวจสอบข้อมูล" style="padding-top: 1em; padding-bottom: 1em;"></input>
+
+                                    <input class="btn btn-primary btn-lg  footer-block w-100 sticky-top text-white colorbtn  " name="submit" type="submit" id="submit" value="ร่วมเป็นพาร์ทเนอร์กับเรา" style="padding-top: 1em; padding-bottom: 1em;"></input>
                                   </form>
-                                  </footer>
+
                     </div>
                     
                 </div>
@@ -263,3 +440,6 @@
 
   </body>
 </html>
+  <?php 
+  
+  ?>

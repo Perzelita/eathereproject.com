@@ -4,12 +4,11 @@
 
 
 
-if(isset($_POST['submit'])){
+if(isset($_POST["submit"])){
     $sql_check_phone = "SELECT * FROM `member` WHERE `telephone` = '".$_POST['telephone']."' AND `citizen_id`= '".$_POST['citizen_id']."'  ";
     $check_phone = $conn->query($sql_check_phone) or die($conn->error);
 
     if(!$check_phone->num_rows){
-include './line_notify/line_notify_kyc.php';
 $location = '../pic/kyc/';
 
     $pic_profile = $_FILES['pic_profile']['name'];
@@ -35,17 +34,16 @@ move_uploaded_file($temp_pic_acc,$location.$pic_acc);
 move_uploaded_file($temp_pic_verify,$location.$pic_verify);
 
 
-    $sql="INSERT INTO `request_kyc` (`status_verify_id`,`type_kyc`,`name`, `surname`,`user`,
-                                    `age`,`citizen_id`, `birthday`, `email`, `telephone`, `no_address1`, `no_address2`, `district`,
+    $sql="INSERT INTO `request_kyc` ( `status_verify_id`,`type_kyc`,`name`, `surname`,`user`,
+                                    `citizen_id`, `birthday`, `email`, `telephone`, `no_address1`, `no_address2`, `district`,
                                      `amphoe`, `province`, `zipcode`, `latitude`, `longitude`, `partner_name`, `food_type`, `open_order`,
-                                      `close_order`, `bio`, `timestamp`,`pic_profile`,`pic_ctizen_id`,
-                                      `pic_cover`,`pic_acc`,`pic_verify`)
+                                      `close_order`, `bio`, `timestamp`, `pic_profile`, `pic_ctizen_id`,
+                                      `pic_cover`, `pic_acc`, `pic_verify` )
     VALUES ('0',
             'partner',
             '".$_POST['name']."',
             '".$_POST['surname']."',
             '".$_POST['user']."',
-            '".$_POST['age']."',
             '".$_POST['citizen_id']."',
             '".$_POST['birthday']."',
             '".$_POST['email']."',
@@ -74,36 +72,44 @@ move_uploaded_file($temp_pic_verify,$location.$pic_verify);
     $result = $conn->query($sql)  or die($conn->error);
     //$result2 = $conn->query($sql2)  or die($conn->error)  ;
         if($result){
-            echo '<script> alert  ("ทำการสมัครสำเร็จ ท่านสามารถรอรับผลทาง E-mail ภายใน 3-5 วันทำการ")</script>';
+            include './line_notify/line_notify_kyc.php';
+
+            echo '<script> alert  ("ทำการสมัครสำเร็จ ท่านสามารถรอรับผลทาง SMS ภายใน 3-5 วันทำการ")</script>';
             header('location:../index.php');
             header('Refresh:0;');
 
             
         }
         else
+
+       
             {
+                 
            echo '<script> alert ("...")</script>';
            header('Refresh:0;');
+             
             }
     
     
     
     }
     else {
+            
+
         echo '<script> alert ("หมายเลขโทรศัพท์หรือบัตรประชาชนได้ถูกใช้ไปแล้ว")</script>';
         echo '<script>  window.history.go(-1);</script>';
         header('Refresh:0;');
+        
          }
          
     }
 
-    elseif (isset($_POST['submit1'])){
+    elseif (isset($_POST["submit1"])){
         $sql_check_phone = "SELECT * FROM `member` WHERE `telephone` = '".$_POST['telephone']."' AND `citizen_id`= '".$_POST['citizen_id']."'  ";
         $check_phone = $conn->query($sql_check_phone) or die($conn->error);
     
         if(!$check_phone->num_rows){
 
-        include './line_notify/line_notify_kyc.php';
 
         $pic_profile = $_FILES['pic_profile']['name'];
     $temp_pic_profile = $_FILES['pic_profile']['tmp_name'];
@@ -129,7 +135,7 @@ move_uploaded_file($temp_pic_verify,$location.$pic_verify);
         move_uploaded_file($temp_pic_verify,$location.$pic_verify);
 
         $sql="INSERT INTO `request_kyc` (`status_verify_id`,`type_kyc`,`name`, `surname`,`user`,
-        `age`,`citizen_id`, `birthday`, `email`, `telephone`, `no_address1`, `no_address2`, `district`,
+        `citizen_id`, `birthday`, `email`, `telephone`, `no_address1`, `no_address2`, `district`,
          `amphoe`, `province`, `zipcode`, `latitude`, `longitude`, `venchle_id`, `venchle_type`, `venchle_brand`,
          `venchle_series`, `venchle_propoties`, `timestamp`, `pic_profile`,`pic_ctizen_id`, `pic_booking_driver`, `pic_acc`, `pic_verify`)
          VALUES ('0',
@@ -137,7 +143,6 @@ move_uploaded_file($temp_pic_verify,$location.$pic_verify);
             '".$_POST['name']."',
             '".$_POST['surname']."',
             '".$_POST['user']."',
-            '".$_POST['age']."',
             '".$_POST['citizen_id']."',
             '".$_POST['birthday']."',
             '".$_POST['email']."',
@@ -166,26 +171,38 @@ move_uploaded_file($temp_pic_verify,$location.$pic_verify);
          
          $result = $conn->query($sql)  or die($conn->error);
          //$result2 = $conn->query($sql2)  or die($conn->error)  ;
-             if($result){
-                 echo '<script> alert  ("ทำการสมัครสำเร็จ ท่านสามารถรอรับผลทาง E-mail ภายใน 3-5 วันทำการ")</script>';
-                 header('location:../index.php');
-                 header('Refresh:0;');
+         if($result){
+
+            echo '<script> alert  ("ทำการสมัครสำเร็จ ท่านสามารถรอรับผลทาง SMS ภายใน 3-5 วันทำการ")</script>';
+            header('location:../index.php');
+            header('Refresh:0;');
+            include './line_notify/line_notify_kyc.php';
+
+            
+        }
+        else
+
+       
+            {
                  
-             }
-             else
-                 {
-                echo '<script> alert ("...")</script>';
-                header('Refresh:0;');
-                 }
+           echo '<script> alert ("...")</script>';
+           header('Refresh:0;');
+             
+            }
+    
+    
+    
     }
     else {
+            
+
         echo '<script> alert ("หมายเลขโทรศัพท์หรือบัตรประชาชนได้ถูกใช้ไปแล้ว")</script>';
         echo '<script>  window.history.go(-1);</script>';
         header('Refresh:0;');
+        
          }
          
     }
-    
 
 
 ?>

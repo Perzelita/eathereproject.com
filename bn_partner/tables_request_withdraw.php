@@ -223,7 +223,7 @@
                       </div></td>
                       <td><input type="text" class="form-control  " name="no_account" id="" placeholder="ถ้าเลือกพร้อมเพย์กรุณากรอกเบอร์" required> </td>
                       <td><select type="number" class="form-control" name="amount" id="" required>
-                        <option>500</option>
+                        <option>5</option>
                         <option>1000</option>
                         <option>2000</option>
                         <option>10000</option>

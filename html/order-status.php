@@ -7,10 +7,11 @@ $sqlread ="SELECT * FROM `order` WHERE `member_id` = '".$_SESSION['member_id']."
                               $row_read= $conn->query($sqlread) or die($conn->error);
                               $pointer= $row_read->fetch_assoc();
                               
-                              $sql2 = "SELECT * FROM `member` WHERE member_id = '".$pointer['partner_id']."' ";
-                                         $result2 = $conn->query($sql2) or die($conn->error)  ;
-                                         $read_partner = $result2->fetch_assoc();
-
+                              $sql_details ="SELECT * FROM `order_details` WHERE `order_id` = '".$pointer['order_id']."'; ";
+                              $row_read2= $conn->query($sql_details) or die($conn->error);
+                              $show_details= $row_read2->fetch_assoc();                            
+                            
+                             
 
 
 ?>
@@ -36,13 +37,13 @@ $sqlread ="SELECT * FROM `order` WHERE `member_id` = '".$_SESSION['member_id']."
                               
 
                               if ($row_read->num_rows > 0) {
-                                while($read_status = $result->fetch_assoc()) {
+                                while($read_status = $row_read->fetch_assoc()) {
                                   ?>
 
 <li class="list-group-item d-flex justify-content-between align-items-center ">
 
 <span class="badge badge-primary badge-pill badge mr-auto "><?php echo $read_status['time'];?></span>
-<span class=" mr-auto " style="font-size: 1em;"><?php echo $read_partner['partner_name'];?></span>
+<span class=" mr-auto " style="font-size: 1em;"><?php echo "ได้ทำการซื้อ "; echo $show_details['menu_name']; echo " จำนวน  "; echo "X " ;echo $show_details['unit']; echo" ยอดรวม "; echo $show_details['totaly']; echo " บาท ";?></span>
 <?php  
 
 if($read_status["status_order"]==1){ echo'  <span class="ml-auto  lead" style="color:black; text-shadow: black;"> 

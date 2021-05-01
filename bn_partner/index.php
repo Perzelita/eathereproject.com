@@ -344,7 +344,101 @@ $result_dash_partner = $result->fetch_assoc()
 
             </div>
           </div>
+          <?php
+        $sql = "SELECT SUM(early) AS `early`,`time` FROM `order` WHERE `time` BETWEEN '2021-04-01 00:00:00' AND '2021-04-30 23:59:59' AND `partner_id` ='".$_SESSION['member_id']."'
+ ";
+          $result = $conn->query($sql)or die($conn->error)  ;
 
+
+
+          $early_april=0;
+
+                  if ($result->num_rows > 0) {
+        
+        ?> 
+        
+        <!-- /.container-fluid -->
+        <div class="container-fluid">
+
+
+            <!-- DataTales Example -->
+         <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">ยอดรวมรายเดือนต่อออเดอร์ที่หัก %เรียบร้อยแล้ว</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+
+                      <th>เดือน/บาท</th>
+                      <td>มกราคม</td>
+                      <td>กุมพาพันธ์</td>
+                      <td>มีนาคม</td>
+                      <td>เมษายน</td>
+                      <td>พฤษภาคม</td>
+                      <td>มิถุนายน</td>
+                      <td>กรกฏาคม</td>
+                      <td>สิงหาคม</td>
+                      <td>กันยายน</td>
+                      <td>ตุลาคม</td>
+                      <td>พฤศจิกายน</td>
+                      <td>ธันวาคม</td>
+
+                     
+                      
+                      
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                  <?php
+                     
+                     while($row = $result->fetch_assoc() ) {
+                      $date = $row['time'];
+                      $your_date = date("Y", strtotime($date));
+
+                      
+                      ?>
+                    <tr>
+                      
+                    <th scope="row" name="dd/mm"><?php echo $your_date;?></th>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+
+
+                    <td scope="row" name="salary"><?php echo $row["early"]; ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    <td scope="row" name="dd/mm"><?php ?></td>
+                    
+                    
+                    
+                     
+                    
+                      
+                      
+                      
+                      
+                              
+                    </tr>
+                    
+                  </tbody>
+                  <?php                        
+ } ?> 
+                </table>
+                <?php } else {
+                          
+                        }
+                        
+                        ?>
         </div>
         <!-- /.container-fluid -->
         <footer class="sticky-footer bg-white">

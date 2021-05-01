@@ -230,8 +230,20 @@ require_once('../php_front/authen.php');
                                                                          
 
                 <div class="col-md-2 mb-3">
+                  <label for="">อายุ</label>
+                  <?php
+                  $birthDate = $_SESSION["birthday"];
+
+$birthDate = explode("-", $birthDate);
+
+$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[2], $birthDate[1], $birthDate[0]))) > date("md") ? ((date("Y")-$birthDate[0])-1):(date("Y")-$birthDate[0]));
+?>
+                  <input type="text" class="form-control validate" name="birthday" id="" placeholder="วัน/เดือน/ปี เกิด" value="<?php echo $age; ?>  " readonly>
+                </div>
+
+                <div class="col-md-2 mb-3">
                   <label for="">วัน/เดือน/ปี เกิด</label>
-                  <input type="date" class="form-control validate" name="birthday" id="" placeholder="วัน/เดือน/ปี เกิด" value="<?php echo $_SESSION['birthday']; ?>  " readonly>
+                  <input type="text" class="form-control validate" name="birthday" id="" placeholder="วัน/เดือน/ปี เกิด" value="<?php echo $_SESSION['birthday']; ?>  " readonly>
                 </div>
 
                 <div class="col-md-3 mb-3">

@@ -12,7 +12,7 @@ if ($_GET['change']>0){
   
 
     foreach ($_GET['m_id'] as $row => $value) {
-         if ($_GET['m_unit'][$row] >0) { 
+
              
 
 
@@ -23,14 +23,24 @@ if ($_GET['change']>0){
       '".$_GET['deliver_early']."','".$_GET['extra_early']."','".$_GET['time_estimate']."','1','".$_GET['note']."'
       );";
 
-      $sql_detail="INSERT INTO `order_details`(`order_details_id`, `order_id`, `menu_id`,`menu_name`, `unit`, `price_total`, `totaly`)
-       VALUES (LAST_INSERT_ID(),LAST_INSERT_ID(),'".$_GET['m_id'][$row]."','".$_GET['m_name'][$row]."','".$_GET['m_unit'][$row]."',
+$result_order = $conn->query($sql_order)  or die($conn->error);
+
+$sql_no="SELECT * FROM `order` ORDER BY `order_id` DESC LIMIT 1";
+$result_no = $conn->query($sql_no)  or die($conn->error);
+$row_no = $result_no->fetch_assoc();
+$order_no= $row_no['order_id'];
+
+
+
+if ($_GET['m_unit'][$row] >0) { 
+
+      $sql_detail="INSERT INTO `order_details`( `order_id`, `menu_id`,`menu_name`, `unit`, `price_total`, `totaly`)
+       VALUES ('".$order_no."','".$_GET['m_id'][$row]."','".$_GET['m_name'][$row]."','".$_GET['m_unit'][$row]."',
        '".$_GET['m_p_d'][$row]."','".$_GET['m_t'][$row]."');";
 
 $change_balance = "UPDATE member set balance= '".$_GET['change']."' WHERE member_id = '".$_GET['member_id']."' ;";
 $change_balanced = $conn->query($change_balance)  or die($conn->error);
 
-                      $result_order = $conn->query($sql_order)  or die($conn->error);
                       $result_detail = $conn->query($sql_detail)  or die($conn->error);
 
                       $delete_temp= "DELETE FROM cart_temp WHERE member_id = '".$_GET['member_id']."' ";
@@ -58,7 +68,7 @@ $change_balanced = $conn->query($change_balance)  or die($conn->error);
 
 
 }
-
+    }
 
 }
 
@@ -67,7 +77,7 @@ $change_balanced = $conn->query($change_balance)  or die($conn->error);
 else{echo '<script>alert("เงินของท่านไม่พอสั่งซื้อกรุณาเติมเงินด้วยค่ะ");</script>';
     echo '<script>  window.history.go(-1);</script>';
     }
-}
+
 
 
 

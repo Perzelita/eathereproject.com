@@ -58,22 +58,20 @@ require_once('../php_front/authen.php');
 
       
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>ข้อมูลของร้าน</span>
+          <span>ข้อมูลของผู้ขับ</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">จัดการหลังร้าน</h6>
+            <h6 class="collapse-header">จัดการผู้ขับ</h6>
             
-            <a class="collapse-item" href="menu_list.php">จัดการรายการอาหาร</a>
-            <a class="collapse-item active" href="data_personal.php">ประวัติส่วนตัว</a>
+            <a class="collapse-item " href="data_personal.php">ประวัติส่วนตัว</a>
           </div>
         </div>
       </li>
-
          <!-- Nav Item - Tables -->
          <li class="nav-item active">
       <a class="nav-link" href="orders.php">
@@ -227,8 +225,20 @@ require_once('../php_front/authen.php');
                                                                          
 
                 <div class="col-md-2 mb-3">
+                  <label for="">อายุ</label>
+                  <?php
+                  $birthDate = $_SESSION["birthday"];
+
+$birthDate = explode("-", $birthDate);
+
+$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[2], $birthDate[1], $birthDate[0]))) > date("md") ? ((date("Y")-$birthDate[0])-1):(date("Y")-$birthDate[0]));
+?>
+                  <input type="text" class="form-control validate" name="birthday" id="" placeholder="วัน/เดือน/ปี เกิด" value="<?php echo $age; ?>  " readonly>
+                </div>
+
+                <div class="col-md-2 mb-3">
                   <label for="">วัน/เดือน/ปี เกิด</label>
-                  <input type="date" class="form-control validate" name="birthday" id="" placeholder="วัน/เดือน/ปี เกิด" value="<?php echo $_SESSION['birthday']; ?>  " readonly>
+                  <input type="text" class="form-control validate" name="birthday" id="" placeholder="วัน/เดือน/ปี เกิด" value="<?php echo $_SESSION['birthday']; ?>  " readonly>
                 </div>
 
                 <div class="col-md-3 mb-3">

@@ -67,12 +67,15 @@ require_once(  '../section/head.php');
 require_once( '../section/header-navbar-modal.php');
 require_once('../php_cruid/connect_DB.php');
 date_default_timezone_set("Asia/Bangkok");
+error_reporting(E_ALL);
+
 if (isset($_SESSION['telephone'])){  
 if ($_REQUEST['total'] !=0){
 $id = $_REQUEST['id'];
 $readcart="SELECT* FROM cart_temp WHERE member_id= '".$_SESSION['member_id']."';";
 $result_read= $conn->query($readcart) or die ($conn->error);  
 $row_read = mysqli_fetch_array($result_read, MYSQLI_ASSOC);
+
 if($row_read['member_id']==$_SESSION['member_id'] ){
 $delete_temp= "DELETE FROM cart_temp WHERE member_id = '".$_SESSION['member_id']."' ";
 $_resule_del = $conn->query($delete_temp) or die($conn->error);

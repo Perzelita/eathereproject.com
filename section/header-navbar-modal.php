@@ -236,6 +236,11 @@
                                     <option>ธนคารไทยพาณิชย์</option>
                                     <option>ธนคารออมสิน</option>
                                     <option>Promptpay</option>
+                                    <option>Shoppee pay</option>
+                                    <option>True Wallet</option>
+
+
+
                                   </select>
                                     
           
@@ -348,25 +353,7 @@
                       <input type="text" id="telephone" name="telephone" class="form-control " placeholder="เบอร์โทรศัพท์10หลัก" requried >
                       
                     </div>
-                    <div class="md-form mb-1 my-2">
-                      <i class=" prefix dark-text"></i>
-                      <label data-error="wrong" data-success="right" for="telephone">ค่าจุดพิกัดแกน X</label>
-                      <input type="text" class="form-control " id="Latitude" name="longitude" value="" > 
-                      
-                    </div>
-                    <div class="md-form mb-1 my-2">
-                      <i class=" prefix dark-text"></i>
-                      <label data-error="wrong" data-success="right" for="telephone">ค่าจุดพิกัดแกน Y</label>
-                      <input type="text" class="form-control " id="Longitude" name="longitude" value="" > 
-                      
-                    </div>
-
-                    <div class="md-form mb-1 my-2 float-right">
-                      <i class=" prefix dark-text"></i>
-                      <label data-error="wrong" data-success="right" for=""></label>
-                      <a name="locations" id="" class="btn btn-primary colorbtn" href="#" role="button" onclick="getLocationConstant()">ปักหมุดพิกัดปัจจุบัน</a>
-                      
-                    </div>
+                    
                     
 
                     <div class="md-form mb-1 mt-2  form-check">

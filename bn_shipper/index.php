@@ -193,7 +193,6 @@ $result_dash_partner = $result->fetch_assoc()
                 
               
               <i class="fas fa-download fa-sm text-white-50 ">
-                <input type="submit" name="submit"class="d-none d-sm-inline-block btn  btn-primary shadow-sm btn-group-lg "value="ยืนยัน" />
               </i> 
             
               </form>
@@ -202,22 +201,7 @@ $result_dash_partner = $result->fetch_assoc()
           <!-- Content Row -->
           <div class="row">
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">ยอดรวม (สะสม)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $result_dash_partner['total']; ?> บาท</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -225,7 +209,7 @@ $result_dash_partner = $result->fetch_assoc()
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">รายได้ต่อเดือน</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">รายได้สะสม</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $result_dash_partner['salary_month']; ?> บาท</div>
                     </div>
                     <div class="col-auto">
@@ -245,7 +229,7 @@ $result_dash_partner = $result->fetch_assoc()
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">คงเหลือ</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $result_dash_partner['balance']; ?>บาท</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $_SESSION['balance']; ?>บาท</div>
                         </div>
                         
                         </div>
@@ -306,6 +290,71 @@ $result_dash_partner = $result->fetch_assoc()
           </div>
 
         </div>
+<?php
+        $sql = "SELECT * FROM `order` WHERE shipper_id ='".$_SESSION['member_id']."' ";
+          $result = $conn->query($sql)or die($conn->error)  ;
+          
+                  if ($result->num_rows > 0) {
+        
+        ?> 
+        
+        <!-- /.container-fluid -->
+        <div class="container-fluid">
+
+
+            <!-- DataTales Example -->
+         <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">ยอดรวมรายวันต่อ ออเดอร์</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+
+                      <th>วัน/เดือน</th>
+                      <th>รายได้/บาท</th>
+                      
+                      
+                      
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                  <?php
+                     
+                     while($row = $result->fetch_assoc() ) {
+                       
+                      $date = $row['time'];
+                      $your_date = date("d-m", strtotime($date));
+
+                      
+                      ?>
+                    <tr>
+                      
+                    <th scope="row" name="dd/mm"><?php echo$your_date ?></th>
+                    <td scope="row" name="salary"><?php echo $row["deliver_early"]; ?></td>
+
+                    
+                    
+                     
+                    
+                      
+                      
+                      
+                      
+                              
+                    </tr>
+                    
+                  </tbody>
+                  <?php } ?> 
+                </table>
+                <?php } else {
+                          
+                        }
+                        
+                        ?>
         <!-- /.container-fluid -->
         <footer class="sticky-footer bg-white">
         <div class="container my-auto">

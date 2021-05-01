@@ -56,17 +56,16 @@
       <!-- Heading -->
       
 
-       <!-- Nav Item - Pages Collapse Menu -->
-       <li class="nav-item ">
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>ข้อมูลของร้าน</span>
+          <span>ข้อมูลของผู้ขับ</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">จัดการหลังร้าน</h6>
+            <h6 class="collapse-header">จัดการผู้ขับ</h6>
             
-            <a class="collapse-item" href="menu_list.php">จัดการรายการอาหาร</a>
             <a class="collapse-item " href="data_personal.php">ประวัติส่วนตัว</a>
           </div>
         </div>
@@ -223,7 +222,7 @@
                       </div></td>
                       <td><input type="text" class="form-control  " name="no_account" id="" placeholder="ถ้าเลือกพร้อมเพย์กรุณากรอกเบอร์" required> </td>
                       <td><select type="number" class="form-control" name="amount" id="" required>
-                        <option>500</option>
+                        <option>5</option>
                         <option>1000</option>
                         <option>2000</option>
                         <option>10000</option>

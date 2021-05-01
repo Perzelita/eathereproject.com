@@ -11,7 +11,6 @@ $result_accept=$conn->query($sql_accept) or die($conn->error);
 $result_accept2=$conn->query($sql_accept2) or die($conn->error);
 
 if($result_accept){
-    echo   '<script>alert("ได้ทำการยืนยันออเดอร์เรียบร้อยแล้ว") </script>';
     $sql= "SELECT * FROM total_summary_partner WHERE partner_id ='".$_SESSION['member_id']."'"
     ;
     $result =$conn->query($sql) or die($conn->error);
@@ -33,9 +32,10 @@ if($result_accept){
 
    $_SESSION['balance']= $early;
 
-   
-   echo   '<script>windows.history.back(-1);</script>';
+   echo   '<script>alert("ได้ทำการยืนยันออเดอร์เรียบร้อยแล้ว") </script>';
 
+   echo '<script>  window.history.go(-1);</script>';
+   header('Refresh:0;');
 
 }
 }
@@ -55,8 +55,8 @@ $result_decline =$conn->query($sql_decline) or die($conn->error);
 $result_decline2 =$conn->query($sql_decline2) or die($conn->error);
 
 echo   '<script>alert("ได้ทำการยกเลิกออเดอร์เรียบร้อยแล้ว") </script>';
-echo   '<script>windows.history.back();</script>';
-
+echo '<script>  window.history.go(-1);</script>';
+header('Refresh:0;');
 
 
 
@@ -73,13 +73,13 @@ elseif(isset($_POST['accept_myself'])){
 echo   '<script>alert("ได้ทำการยืนยันออเดอร์เรียบร้อยแล้ว") </script>';
 
 if($result_accept){
-    echo   '<script>aleart("ได้ทำการยืนยันออเดอร์เรียบร้อยแล้ว") </script>';
     $sql= "SELECT * FROM total_summary_partner WHERE partner_id ='".$_SESSION['member_id']."'"
     ;
     $result =$conn->query($sql) or die($conn->error);
     $read_tran = $result->fetch_assoc();
     $read_tran['total'] += (int)$_POST['total'];
     $read_tran['salary'] += (int)$_POST['extra_early'];
+    
     
    
 
@@ -98,9 +98,9 @@ if($result_accept){
 
    $_SESSION['balance']= $early;
 
-  
-
-echo   '<script>windows.history.back();</script>';
+   echo   '<script>aleart("ได้ทำการยืนยันออเดอร์เรียบร้อยแล้ว") </script>';
+   echo '<script>  window.history.go(-1);</script>';
+   header('Refresh:0;');
 }}
 elseif(isset($_POST['deliver_done'])){
     $read="SELECT* FROM `member` WHERE `user` = '".$_POST['user']."' ";
@@ -111,8 +111,8 @@ elseif(isset($_POST['deliver_done'])){
     $result_done =$conn->query($sql_done) or die($conn->error);
     
     echo   '<script>alert("ทำการส่งอาหารให้ลูกค้าเรียบร้อย") </script>';
-    echo   '<script>windows.history.back();</script>';
-    
+    echo '<script>  window.history.go(-1);</script>';
+    header('Refresh:0;');    
     
     
     

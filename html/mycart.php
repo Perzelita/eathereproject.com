@@ -4,12 +4,14 @@ require_once(  '../section/head.php');
 require_once( '../section/header-navbar-modal.php');
 require_once('../php_cruid/connect_DB.php');
 date_default_timezone_set("Asia/Bangkok");
+error_reporting(E_ALL);
 
 $id = $_REQUEST['id'];
 
 $read_restaurant = "SELECT * FROM member 
 WHERE member_id = '".$id."' AND status_member = 'partner'  ;";
 $result = $conn->query($read_restaurant)  or die($conn->error);
+error_reporting(E_ALL);
 
 ?>
 
@@ -140,7 +142,7 @@ while($row = $result->fetch_assoc()) { ?>
                                                 <p>เวลาเปิดรับออเดอร์ </p>
                                                 <p class="lead ">
                                                         <select class="form-control  rounded border border-secondary  border-secondary"  id="sel1"  >
-                                                                <option disabled>โปรดเลือกเวลาในการจัดส่งสินค้า</option>
+                                                                <option disabled></option>
                                                                   <option><?php echo $row['open_order'];
                                                                   }?></option>
                                                               </select>

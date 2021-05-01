@@ -28,7 +28,7 @@ $row = $result->fetch_assoc();
     $citizen_id_str9_13 = substr($row['citizen_id'],-4);
     $hashed = password_hash($citizen_id_str9_13, PASSWORD_DEFAULT);
     $sql ="INSERT INTO `member` (`status_member`, `user`, `telephone`, `password`, `email`, `no_address`,
-     `district`, `amphoe`, `province`, `zipcode`, `latitude`, `longitude`, `name`, `surname`, `age`, `citizen_id`,
+     `district`, `amphoe`, `province`, `zipcode`, `latitude`, `longitude`, `name`, `surname`, `citizen_id`,
       `birthday`,  `pic_profile`, `pic_ctizen_id`,
         `pic_acc`, `pic_verify`,
         `venchle_id`,`venchle_type`, `venchle_brand`, `venchle_series`, `venchle_propoties`, `pic_booking_driver`,
@@ -37,7 +37,7 @@ $row = $result->fetch_assoc();
        '$address',
         '".$row['district']."', '".$row['amphoe']."', '".$row['province']."', '".$row['zipcode']."',
          '".$row['latitude']."','".$row['longitude']."',
-         '".$row['name']."', '".$row['surname']."', '".$row['age']."', '".$row['citizen_id']."','".$row['birthday']."',
+         '".$row['name']."', '".$row['surname']."', '".$row['citizen_id']."','".$row['birthday']."',
         '".$row['pic_profile']."','".$row['pic_ctizen_id']."',
           '".$row['pic_acc']."', '".$row['pic_verify']."',
           '".$row['venchle_id']."',

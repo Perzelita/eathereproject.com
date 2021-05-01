@@ -68,17 +68,16 @@ require_once('../php_front/authen.php');?>
       <!-- Heading -->
      
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item ">
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>ข้อมูลของร้าน</span>
+          <span>ข้อมูลของผู้ขับ</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">จัดการหลังร้าน</h6>
+            <h6 class="collapse-header">จัดการผู้ขับ</h6>
             
-            <a class="collapse-item" href="menu_list.php">จัดการรายการอาหาร</a>
             <a class="collapse-item " href="data_personal.php">ประวัติส่วนตัว</a>
           </div>
         </div>
@@ -253,7 +252,7 @@ require_once('../php_front/authen.php');?>
 ?>
                               <?php echo $read_status["menu_id"]; echo" "; echo $read_status["menu_name"];echo " จำนวน "; echo$read_status["unit"];echo"<br>"; ?>
                              </td>
-                              <?php?>
+                              
                               <td><?php  echo $read_status["deliver_early"]; ?> บาท</td>
                               <input type="hidden" name="total" value="<?php echo$read_status['total'];?>">
                               <input type="hidden" name="deliver_early" value="<?php echo $read_status['deliver_early'];?>">

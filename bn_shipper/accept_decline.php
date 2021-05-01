@@ -4,7 +4,7 @@ require_once('../php_front/authen.php');
 
 if(isset($_POST['accept'])){
     $early= (int)$_SESSION['balance'] + (int)$_POST['deliver_early']; 
-    $sql_accept="UPDATE `order`, SET `status_order`='4',`shipper_id`='".$_SESSION['member_id']."' WHERE `order_id` ='".$_POST['order_id']."' ";
+    $sql_accept="UPDATE `order` SET `status_order`='4', `shipper_id`='".$_SESSION['member_id']."' WHERE `order_id` = '".$_POST['order_id']."' ";
      $sql_accept2="UPDATE member SET balance = '".$early."' WHERE member_id='".$_SESSION['member_id']."'; ";
     
 $result_accept=$conn->query($sql_accept) or die($conn->error);
@@ -34,7 +34,8 @@ if($result_accept){
 
    echo   '<script>alert("ได้ทำการยืนยันออเดอร์เรียบร้อยแล้ว") </script>';
 
-   echo   '<script>windows.history.go(-1);</script>';
+   echo '<script>  window.history.go(-1);</script>';
+   header('Refresh:0;');
 
 
 }
@@ -48,8 +49,9 @@ elseif(isset($_POST['recept'])){
     $result_done =$conn->query($sql_done) or die($conn->error);
     
     echo   '<script>alert("ทำการรับของเรียบร้อย") </script>';
-    echo   '<script>windows.history.go(-1);</script>';
-    
+    echo '<script>  window.history.go(-1);</script>';
+    header('Refresh:0;');
+     
     
     
     
@@ -67,8 +69,9 @@ elseif(isset($_POST['deliver_done'])){
     $result_done =$conn->query($sql_done) or die($conn->error);
     
     echo   '<script>alert("ทำการส่งอาหารให้ลูกค้าเรียบร้อย") </script>';
-    echo   '<script>windows.history.go(-1);</script>';
-    
+    echo '<script>  window.history.go(-1);</script>';
+    header('Refresh:0;');
+     
     
     
     

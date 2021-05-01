@@ -29,14 +29,14 @@ $address = print_r($address1,$address2) ;
 $citizen_id_str9_13 = substr($row['citizen_id'],-4);
 $hashed = password_hash($citizen_id_str9_13, PASSWORD_DEFAULT);
 $sql ="INSERT INTO `member` (`status_member`, `user`, `telephone`, `password`, `email`, `no_address`,
- `district`, `amphoe`, `province`, `zipcode`, `latitude`, `longitude`, `name`, `surname`, `age`, `citizen_id`,
+ `district`, `amphoe`, `province`, `zipcode`, `latitude`, `longitude`, `name`, `surname`,  `citizen_id`,
   `birthday`, `partner_name`, `food_type`, `open_order`, `close_order`, `bio`, `pic_profile`, `pic_ctizen_id`,
    `pic_cover`, `pic_acc`, `pic_verify`, `created`, `updated`, `balance`, `last_login`) 
    VALUES ('".$row['type_kyc']."', '".$row['user']."', '".$row['telephone']."', '$hashed', '".$row['email']."',
    '$address',
     '".$row['district']."', '".$row['amphoe']."', '".$row['province']."', '".$row['zipcode']."',
      '".$row['latitude']."','".$row['longitude']."',
-     '".$row['name']."', '".$row['surname']."', '".$row['age']."', '".$row['citizen_id']."','".$row['birthday']."',
+     '".$row['name']."', '".$row['surname']."',  '".$row['citizen_id']."','".$row['birthday']."',
      '".$row['partner_name']."','".$row['food_type']."',
      '".$row['open_order']."', '".$row['close_order']."',
       '".$row['bio']."','".$row['pic_profile']."',

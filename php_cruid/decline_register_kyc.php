@@ -24,6 +24,7 @@ if ($id = $_GET['request_kyc_id']){
     if($result_updated){
         echo '<script> alert  ("ปฏิเสธคำขอร่วมสำเร็จ")</script>';
         echo '<script>  window.history.go(-1);</script>';
+        header('Refresh:0;');
      }
     else{  };
     }
