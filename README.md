@@ -9,17 +9,17 @@ eathereproject.com (สามารถกดลิงค์ได้)
   - PromptPay-QR-generator-master (ตัวแปลงQR Code QR code สำหรับ แสกน Prompt Pay QR Code)
 ------------------------------------------------------------------------------------------------------------------------
 อธิบายไฟล์สำคัญที่เกี่ยวข้องในโปรเจคนี้
- -PromptPay-QR-generator-master -> QR code สำหรับ Generate QR code ใช้กับ Prompt pay
- -banner -> ที่เก็บไฟล์รูปภาพเป็นส่วนของ Banner
- -bn_admin,bn_partner,bn_shipper -> เป็นไฟล์จัดการหลังบ้านโดยใช้ Template Dashboard ของ SB Admin ฝั่ง ผู้ดูแลระบบ,ร้านค้า,ผู้จัดส่ง ตามลำดับ
--html -> ที่เก็บไฟล์โดยเฉพาะ .php ที่ไว้จัดการระบบสั่งอาหารในหน้าแรกไฟล์ชื่อว่า index.php
- -jquery.Thailand.js -> Auto Complete ที่อยู่ ใช่้สำหรับในประเทศไทย
- -node_modules -> Bootstap 4.2
- -php_cruid,php_front -> ไฟล์จัดการต่างๆในฝั่ง Backend โดยใช้ภาษา PHP เป็นหลัก
- -pic -> ไฟล์สำหรับจัดเก็บภาพ upload โดย user 
- -section -> ส่วนต่างๆ เช่น header footer body ของไฟล์ index.php
- -partner,shipper ->เก็บ index.php -> /partner or /shipper
- -important Readme !.txt -> วิธีการติดตั้ง 
+ - PromptPay-QR-generator-master -> QR code สำหรับ Generate QR code ใช้กับ Prompt pay
+ - banner -> ที่เก็บไฟล์รูปภาพเป็นส่วนของ Banner
+ - bn_admin,bn_partner,bn_shipper -> เป็นไฟล์จัดการหลังบ้านโดยใช้ Template Dashboard ของ SB Admin ฝั่ง ผู้ดูแลระบบ,ร้านค้า,ผู้จัดส่ง ตามลำดับ
+- html -> ที่เก็บไฟล์โดยเฉพาะ .php ที่ไว้จัดการระบบสั่งอาหารในหน้าแรกไฟล์ชื่อว่า index.php
+ - jquery.Thailand.js -> Auto Complete ที่อยู่ ใช่้สำหรับในประเทศไทย
+ - node_modules -> Bootstap 4.2
+ - php_cruid,php_front -> ไฟล์จัดการต่างๆในฝั่ง Backend โดยใช้ภาษา PHP เป็นหลัก
+ - pic -> ไฟล์สำหรับจัดเก็บภาพ upload โดย user 
+ - section -> ส่วนต่างๆ เช่น header footer body ของไฟล์ index.php
+ - partner,shipper ->เก็บ index.php -> /partner or /shipper
+ - important Readme !.txt -> วิธีการติดตั้ง 
 
  -eat1-3.sql -> Database MySQL สำหรับการ IMPORT โดยใช้ชื่อ database ว่า eat_1
  -index.php -> เว็บหน้าแรก
