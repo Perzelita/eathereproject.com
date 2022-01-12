@@ -29,5 +29,5 @@ eathereproject.com (สามารถกดลิงค์ได้)
  เว็บไซต์ที่ได้ขึ้น Host -> eathereproject.com
  
  Reference
- https://earthchie.github.io/jquery.Thailand.js/
- https://github.com/maxpromer/PromptPay-QR-generator
+- https://earthchie.github.io/jquery.Thailand.js/
+- https://github.com/maxpromer/PromptPay-QR-generator
