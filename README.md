@@ -21,9 +21,9 @@ eathereproject.com (สามารถกดลิงค์ได้)
  - partner,shipper ->เก็บ index.php -> /partner or /shipper
  - important Readme !.txt -> วิธีการติดตั้ง 
 
- -eat1-3.sql -> Database MySQL สำหรับการ IMPORT โดยใช้ชื่อ database ว่า eat_1
- -index.php -> เว็บหน้าแรก
- -IT55_2562_Manual_แก้ไข.docx -> User manual พื้นฐานวิธีการใช้เว็บไซต์และติดตั้ง
+ - eat1-3.sql -> Database MySQL สำหรับการ IMPORT โดยใช้ชื่อ database ว่า eat_1
+ - index.php -> เว็บหน้าแรก
+ - IT55_2562_Manual_แก้ไข.docx -> User manual พื้นฐานวิธีการใช้เว็บไซต์และติดตั้ง
  ------------------------------------------------------------------------------------------------------------------------
 
  เว็บไซต์ที่ได้ขึ้น Host -> eathereproject.com
